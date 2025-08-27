@@ -1,24 +1,230 @@
+/* Space / Earth-themed stylesheet (purple + teal, darker stars)
+   Paste into /assets/css/style.css (replace previous)
+*/
 
-/* Minimal clean styling */
+/* ===== Theme variables ===== */
 :root{
-  --accent:#2b6cb0;
-  --bg:#ffffff;
-  --muted:#6b7280;
-  --maxw:980px;
+  --accent-a: #6fe6d8;    /* bright teal */
+  --accent-b: #a57cff;    /* soft purple */
+  --accent-gradient: linear-gradient(120deg, var(--accent-a), var(--accent-b));
+  --bg: #031027;          /* deeper space navy */
+  --panel-bg: rgba(255,255,255,0.03);
+  --card-bg: rgba(255,255,255,0.02);
+  --glass-border: rgba(255,255,255,0.05);
+  --muted: #9fb8cc;       /* soft muted cyan */
+  --text: #eaf6fb;        /* pale text */
+  --maxw: 980px;
+  --glass-blur: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
+
+/* ===== Base ===== */
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#111;line-height:1.6}
-.container{max-width:var(--maxw);margin:32px auto;padding:0 20px}
-.header{display:flex;align-items:center;gap:20px}
-.header img{width:96px;height:96px;border-radius:8px;object-fit:cover}
-.header h1{margin:0;font-size:22px}
+html,body{height:100%}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 420px at 85% 8%, rgba(165,124,255,0.06), transparent 10%),
+    radial-gradient(700px 360px at 12% 82%, rgba(111,230,216,0.03), transparent 8%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* darker starfield overlay */
+body::before{
+  content:"";
+  pointer-events:none;
+  position:fixed;
+  inset:0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 900px 900px, 450px 450px, 225px 225px, 110px 110px;
+  opacity:0.32;
+  mix-blend-mode:screen;
+  filter:blur(0.8px);
+  transform: translateZ(0);
+}
+
+/* planet / nebula glow */
+.container{
+  max-width:var(--maxw);
+  margin:36px auto;
+  padding:20px;
+  position:relative;
+  z-index:1;
+}
+.container::after{
+  content:"";
+  pointer-events:none;
+  position:absolute;
+  right:-140px;
+  top:-140px;
+  width:520px;
+  height:520px;
+  background: radial-gradient(circle at 30% 30%, rgba(111,230,216,0.06), rgba(165,124,255,0.05) 30%, transparent 55%);
+  border-radius:50%;
+  filter: blur(34px);
+  z-index:0;
+}
+
+/* ===== Header & Nav ===== */
+.header{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  position:relative;
+  z-index:2;
+}
+.header img{
+  width:96px;height:96px;border-radius:14px;object-fit:cover;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 28px rgba(2,6,23,0.7), 0 1px 0 rgba(255,255,255,0.02) inset;
+}
+.header h1{
+  margin:0;font-size:22px;color:var(--text);
+}
 .nav{margin-top:12px}
-.nav a{margin-right:12px;color:var(--accent);text-decoration:none;font-weight:600}
-.hero{background:#f7fafc;padding:18px;border-radius:8px;margin-top:18px}
-.section{margin-top:26px;padding:18px;border-radius:8px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.03)}
-.section h2{margin-top:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.card{padding:12px;border-radius:6px;background:#fff;border:1px solid #eee}
-.footer{margin:40px 0;color:var(--muted);font-size:14px;text-align:center}
-.badge{display:inline-block;padding:4px 8px;background:var(--accent);color:#fff;border-radius:999px;font-size:12px}
+.nav a{
+  margin-right:12px;
+  color:var(--accent-a);
+  text-decoration:none;
+  font-weight:700;
+  padding:6px 10px;border-radius:10px;
+}
+.nav a:hover, .nav a:focus{
+  background: linear-gradient(90deg, rgba(111,230,216,0.06), rgba(165,124,255,0.05));
+  outline: none;
+}
+
+/* ===== Hero ===== */
+.hero{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:22px;border-radius:14px;margin-top:18px;
+  border:1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: 0 10px 36px rgba(2,6,23,0.55);
+  position:relative;
+  z-index:1;
+}
+
+/* badge */
+.badge{
+  display:inline-block;padding:6px 12px;
+  background:var(--accent-gradient);
+  color:#021a19;
+  border-radius:999px;font-size:12px;font-weight:700;
+  box-shadow: 0 8px 22px rgba(111,230,216,0.06);
+}
+
+/* ===== Sections & cards ===== */
+.section{
+  margin-top:26px;
+  padding:20px;
+  border-radius:14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(0,0,0,0.01));
+  border:1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+  position:relative;
+  z-index:1;
+}
+.section h2{margin-top:0;color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{
+  padding:16px;border-radius:12px;
+  background: var(--card-bg);
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 8px 24px rgba(3,7,20,0.45);
+}
+
+/* project grid & cards */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:10px}
+.project-card{
+  padding:16px;border-radius:14px;background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 12px 36px rgba(2,6,23,0.5);
+  transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s;
+}
+.project-card:hover{transform: translateY(-8px); box-shadow: 0 26px 50px rgba(2,6,23,0.6);}
+.project-card h3{margin:0 0 6px 0;color:var(--text)}
+.project-card p{margin:6px 0;color:var(--muted)}
+.project-card img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-top:10px;border:1px solid rgba(255,255,255,0.03)}
+
+/* highlight box (for internship etc) */
+.highlight{
+  background: linear-gradient(90deg, rgba(111,230,216,0.04), rgba(165,124,255,0.03));
+  border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.04);
+}
+
+/* muted text helper */
+.muted{color:var(--muted)}
+
+/* ===== Buttons ===== */
+.btn{
+  display:inline-block;
+  padding:9px 16px;
+  font-weight:800;
+  border-radius:12px;
+  text-decoration:none;
+  cursor:pointer;
+  border:1px solid transparent;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s;
+  user-select:none;
+  color: #021a19;
+  background: rgba(255,255,255,0.96);
+  font-size:14px;
+}
+.btn:focus{outline:2px solid rgba(255,255,255,0.06); outline-offset:3px}
+.btn:active{transform:translateY(1px)}
+
+/* primary accent button (gradient) */
+.btn-primary{
+  background: var(--accent-gradient);
+  color:#021a19;
+  box-shadow: 0 10px 30px rgba(111,230,216,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.btn-primary:hover{filter:brightness(1.03); transform: translateY(-2px)}
+
+/* ghost / outline */
+.btn-ghost{
+  background: transparent;
+  color:var(--accent-a);
+  border: 1px solid rgba(111,230,216,0.16);
+}
+.btn-ghost:hover{background:rgba(111,230,216,0.03)}
+
+/* link-style button */
+.btn-link{
+  background:transparent;color:var(--accent-b);padding:6px 0;border-radius:6px;font-weight:700;
+}
+
+/* small button group */
+.small-links a{margin-right:12px;display:inline-block}
+
+/* ===== Footer ===== */
+.footer{
+  margin:40px 0;color:var(--muted);font-size:14px;text-align:center;
+  opacity:0.95;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width:720px){
+  .header{flex-direction:row;gap:12px}
+  .header img{width:76px;height:76px}
+  .projects-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .container{padding:14px;margin:18px auto}
+}
+
+/* ===== Accessibility: focus visible ===== */
+:focus{outline:none}
+:focus-visible{outline:2px dashed rgba(165,124,255,0.6);outline-offset:3px}
+
+/* End of stylesheet */

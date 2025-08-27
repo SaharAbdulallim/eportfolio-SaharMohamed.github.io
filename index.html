@@ -6,13 +6,8 @@
   <title>Sahar Mohammed — Portfolio</title>
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
-    /* small helper styles to complement your main stylesheet */
-    .highlight {background:#f0f9ff;border-left:4px solid #2b6cb0;padding:12px;border-radius:6px}
-    .muted {color:var(--muted)}
-    .projects-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-    .project-card{padding:12px;border-radius:8px;background:#fff;border:1px solid #eee}
-    .project-card img{width:100%;height:140px;object-fit:cover;border-radius:6px;margin-top:8px}
-    .small-links a{display:inline-block;margin-right:12px}
+    /* small helpers used only on this page */
+    .small-links a{margin-right:10px}
   </style>
 </head>
 <body>
@@ -23,7 +18,7 @@
     <div>
       <h1>Sahar Mohammed</h1>
       <div style="color:var(--muted)">Erasmus Mundus MSc — Copernicus Digital Earth · Remote Sensing & GeoAI</div>
-      <div class="nav">
+      <div class="nav" aria-label="Main navigation">
         <a href="/index.html">Home</a>
         <a href="/about.html">About</a>
         <a href="/courses.html">Courses</a>
@@ -35,87 +30,109 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" aria-labelledby="intro-heading">
     <strong class="badge">MSc Student</strong>
-    <p style="margin:8px 0 0">
-      Hi — I'm Sahar. I work with satellite imagery, AI, and GeoData Science. This site collects my courses, projects, internships and volunteering work.  
-      Scroll to see featured projects and quick links to reports, storymaps and code.
+    <h2 id="intro-heading" style="margin:10px 0 6px;color:var(--text)">Hello, I'm Sahar</h2>
+    <p class="muted" style="margin:0 0 12px">
+      I work with satellite imagery, AI, and GeoData Science. This site collects my courses, projects, internships and volunteering work.
     </p>
+    <div>
+      <a class="btn btn-primary" href="/projects.html">Explore Projects</a>
+      <a class="btn btn-ghost" href="/courses.html">View Courses</a>
+      <a class="btn" href="/files/cv.pdf">Download CV</a>
+    </div>
   </section>
 
   <!-- Internship highlight -->
-  <section class="section">
-    <h2>🚀 Internship (highlight)</h2>
+  <section class="section" aria-labelledby="internship">
+    <h2 id="internship">🚀 Internship (highlight)</h2>
     <div class="highlight">
-      <strong>Deep Learning for TomoSAR — Internship</strong> — applied research using TomoSAR stacks; I built two deep-learning models, produced notebooks and a final report.
-      <div style="margin-top:8px" class="small-links">
-        <a href="/projects/internship-tomosar.html">Internship page</a>
-        <a href="https://github.com/your-username/tomosar-internship" target="_blank">GitHub repo</a>
-        <a href="/files/projects/internship_tomosar_notebooks.zip">Download notebooks & report (zip)</a>
+      <strong>Deep Learning for TomoSAR — Internship</strong>
+      <p class="muted" style="margin:8px 0 10px">Applied research using TomoSAR stacks; built two deep-learning models and produced notebooks + a final report.</p>
+      <div class="small-links">
+        <a class="btn btn-primary" href="/projects/internship-tomosar.html">Open Internship Page</a>
+        <a class="btn btn-ghost" href="https://github.com/your-username/tomosar-internship" target="_blank" rel="noopener">Open GitHub Repo</a>
+        <a class="btn" href="/files/projects/internship_tomosar_notebooks.zip">Download Notebooks & Report</a>
       </div>
     </div>
   </section>
 
   <!-- Featured Projects -->
-  <section class="section">
-    <h2>Selected Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
+  <section class="section" aria-labelledby="projects">
+    <h2 id="projects">Selected Projects</h2>
+    <div class="projects-grid" role="list">
+      <div class="project-card" role="listitem">
         <h3>OBIA — Coastal Habitat Mapping</h3>
-        <p class="muted">OBIA pipeline: segmentation, rule-based classification, accuracy assessment.</p>
-        <p><strong>Tools:</strong> eCognition / QGIS / Python</p>
-        <a href="/projects/obia-final-project.html">Read project →</a>
+        <p class="muted">Segmentation, rule-based classification and accuracy assessment.</p>
+        <p><strong>Tools:</strong> eCognition · QGIS · Python</p>
+        <div style="margin-top:8px">
+          <a class="btn btn-primary" href="/projects/obia-final-project.html">Open Project</a>
+          <a class="btn btn-ghost" href="/files/projects/obia_final_project_spot.zip">Download ZIP</a>
+        </div>
         <img src="/assets/images/projects/obia_final_map.png" alt="OBIA map">
       </div>
 
-      <div class="project-card">
+      <div class="project-card" role="listitem">
         <h3>Object Detection on SPOT Images</h3>
-        <p class="muted">CNN-based pipeline for object detection on SPOT satellite imagery.</p>
+        <p class="muted">CNN pipeline for object detection on SPOT satellite imagery.</p>
         <p><strong>Tools:</strong> Python · Keras · QGIS</p>
-        <a href="/projects/obia-final-project.html">Read project →</a>
+        <div style="margin-top:8px">
+          <a class="btn btn-primary" href="/projects/obia-final-project.html">Open Project</a>
+          <a class="btn btn-ghost" href="https://github.com/your-username/spot-object-detection" target="_blank" rel="noopener">View Code</a>
+        </div>
         <img src="/assets/images/projects/obia_final_map.png" alt="Object detection demo">
       </div>
 
-      <div class="project-card">
+      <div class="project-card" role="listitem">
         <h3>Building Height from Shadows (OBIA)</h3>
-        <p class="muted">Shadow geometry + OBIA segmentation to estimate building heights. Morphology PPT available.</p>
+        <p class="muted">Shadow geometry + OBIA segmentation for building height estimation.</p>
         <p><strong>Tools:</strong> Python · QGIS</p>
-        <a href="/projects/obia-building-height-shadow.html">Read project →</a>
+        <div style="margin-top:8px">
+          <a class="btn btn-primary" href="/projects/obia-building-height-shadow.html">Open Project</a>
+          <a class="btn" href="/files/projects/building_height_morphology.pptx">Download PPT</a>
+        </div>
         <img src="/assets/images/projects/obia_building_height_demo.png" alt="Building height demo">
       </div>
 
-      <div class="project-card">
+      <div class="project-card" role="listitem">
         <h3>Cairo Festival — Spatial DB (PostGIS)</h3>
-        <p class="muted">Spatial schema design, spatial indexes and sample queries for event management.</p>
-        <p><strong>Tools:</strong> PostgreSQL + PostGIS</p>
-        <a href="/projects/cairo-festival-spatialdb.html">Read project →</a>
+        <p class="muted">Schema design, spatial indexes and example spatial queries.</p>
+        <p><strong>Tools:</strong> PostgreSQL + PostGIS · QGIS</p>
+        <div style="margin-top:8px">
+          <a class="btn btn-primary" href="/projects/cairo-festival-spatialdb.html">Open Project</a>
+          <a class="btn btn-ghost" href="/files/projects/cairo_festival_spatialdb.zip">Download DB Export</a>
+        </div>
         <img src="/assets/images/projects/cairo_festival_demo.png" alt="Cairo festival DB">
       </div>
 
-      <div class="project-card">
+      <div class="project-card" role="listitem">
         <h3>Fire Detection — GEE & EO Browser</h3>
-        <p class="muted">GEE script for burned-area indices + EO Browser visual workflows.</p>
-        <p><strong>Tools:</strong> Google Earth Engine, Sentinel-2</p>
-        <a href="/projects/fire-gee-eobrowser.html">Read project →</a>
+        <p class="muted">GEE script for burned-area indices and EO Browser visual workflows.</p>
+        <div style="margin-top:8px">
+          <a class="btn btn-primary" href="/projects/fire-gee-eobrowser.html">Open Project</a>
+          <a class="btn" href="/files/projects/fire_projects.zip">Download Samples</a>
+        </div>
         <img src="/assets/images/projects/fire_gee_demo.png" alt="Fire detection demo">
       </div>
 
-      <div class="project-card">
+      <div class="project-card" role="listitem">
         <h3>BIP Romania — Drones for Environmental Sciences</h3>
-        <p class="muted">Fieldwork with drones — orthomosaics, vegetation indices and StoryMap report.</p>
-        <p><strong>Tools:</strong> OpenDroneMap / QGIS</p>
-        <a href="/projects/bip-drones-romania.html">Read project →</a>
+        <p class="muted">Drone orthomosaics, vegetation indices and StoryMap report.</p>
+        <div style="margin-top:8px">
+          <a class="btn btn-primary" href="/projects/bip-drones-romania.html">Open Project</a>
+          <a class="btn btn-ghost" href="/files/projects/bip_romania_reports.zip">Download Reports</a>
+        </div>
         <img src="/assets/images/projects/bip_storymap.png" alt="BIP storymap">
       </div>
     </div>
 
-    <p style="margin-top:12px"><a href="/projects.html">View all projects & downloadable reports →</a></p>
+    <p style="margin-top:14px"><a class="btn-link" href="/projects.html">View all projects & reports →</a></p>
   </section>
 
   <!-- Courses preview -->
-  <section class="section">
-    <h2>Courses (preview)</h2>
-    <p class="muted">Core modules and specialization areas from my MSc — click to see full list and links to course projects.</p>
+  <section class="section" aria-labelledby="courses-preview">
+    <h2 id="courses-preview">Courses (preview)</h2>
+    <p class="muted">Core modules and specialization areas from my MSc — click to see full list and linked projects.</p>
 
     <div class="grid" style="margin-top:12px">
       <div class="card">
@@ -125,6 +142,7 @@
           <li>Spatial Thinking & Modelling</li>
           <li>Geovisualisation & Advanced Cartography</li>
         </ul>
+        <a class="btn btn-ghost" href="/courses.html">Open Courses</a>
       </div>
 
       <div class="card">
@@ -134,6 +152,7 @@
           <li>Object-Based Image Analysis (OBIA)</li>
           <li>Digital Earth: Big Earth Data Concepts</li>
         </ul>
+        <a class="btn btn-ghost" href="/courses.html">Open Courses</a>
       </div>
 
       <div class="card">
@@ -143,24 +162,23 @@
           <li>Foundations of Deep Learning</li>
           <li>Deep Learning for Computer Vision</li>
         </ul>
+        <a class="btn btn-ghost" href="/courses.html">Open Courses</a>
       </div>
     </div>
-
-    <p style="margin-top:12px"><a href="/courses.html">See full courses & linked projects →</a></p>
   </section>
 
   <!-- Quick Links -->
-  <section class="section">
-    <h2>Quick Links</h2>
+  <section class="section" aria-labelledby="quick-links">
+    <h2 id="quick-links">Quick Links</h2>
     <div class="grid">
-      <div class="card"><a href="/files/cv.pdf">Download CV</a></div>
-      <div class="card"><a href="https://github.com/SaharAbdulallim" target="_blank">GitHub</a></div>
-      <div class="card"><a href="https://www.linkedin.com/in/sahar-mohamed-644aa9182/" target="_blank">LinkedIn</a></div>
+      <div class="card"><a class="btn" href="/files/cv.pdf">Download CV</a></div>
+      <div class="card"><a class="btn btn-ghost" href="https://github.com/SaharAbdulallim" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="card"><a class="btn btn-ghost" href="https://www.linkedin.com/in/sahar-mohamed-644aa9182/" target="_blank" rel="noopener">LinkedIn</a></div>
     </div>
-    <p style="margin-top:10px" class="muted">Tip: replace placeholder files in <code>/files/projects/</code> and thumbnails in <code>/assets/images/projects/</code> with your real zips, notebooks and storymap screenshots.</p>
+    <p style="margin-top:10px" class="muted">Tip: replace placeholder files in <code>/files/projects/</code> and thumbnails in <code>/assets/images/projects/</code> with your real files and images.</p>
   </section>
 
-  <div class="footer">Built with a starter template • Edit the files in the <code>/</code> folder to customize • Last updated: <!-- fill date manually if you want --> </div>
+  <div class="footer">Built with a starter template • Edit the files in the <code>/</code> folder to customize • Last updated: <!-- update date here --> </div>
 </div>
 
 </body>

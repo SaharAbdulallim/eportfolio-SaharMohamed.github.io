@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sahar Mohammed — Portfolio</title>
-  <!-- relative path (important for project site) -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
     /* tiny page-only helper */
@@ -13,23 +12,20 @@
 </head>
 <body>
 
-<!-- START: Space scene wrapper -->
+<!-- Space scene wrapper -->
 <div class="space-scene" aria-hidden="false">
   <div class="scene-decor" aria-hidden="true"></div>
   <div class="planet" aria-hidden="true"></div>
   <div class="orbit o1" aria-hidden="true"></div>
   <div class="orbit o2" aria-hidden="true"></div>
 
-  <!-- existing site container -->
   <div class="container">
     <header class="header" role="banner">
-      <!-- relative image path -->
       <img src="assets/images/profile.png" alt="Profile photo" />
       <div>
         <h1>Sahar Mohammed</h1>
         <div style="color:var(--muted)">Erasmus Mundus MSc — Copernicus Digital Earth · Remote Sensing & GeoAI</div>
         <nav class="nav" aria-label="Main navigation">
-          <!-- relative links -->
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="courses.html">Courses</a>
@@ -62,7 +58,7 @@
         <p class="muted" style="margin:8px 0 10px">Applied research using TomoSAR stacks; built two deep-learning models and produced notebooks + a final report.</p>
         <div class="small-links">
           <a class="btn btn-primary" href="projects/internship-tomosar.html">Open Internship Page</a>
-          <a class="btn btn-ghost" href="https://github.com/your-username/tomosar-internship" target="_blank" rel="noopener">Open GitHub Repo</a>
+          <a class="btn btn-ghost" href="https://github.com/SaharAbdulallim/Deep-Learning-in-TomoSAR" target="_blank" rel="noopener">Open GitHub Repo</a>
           <a class="btn" href="files/projects/internship_tomosar_notebooks.zip">Download Notebooks & Report</a>
         </div>
       </div>
@@ -70,72 +66,111 @@
 
     <!-- Featured Projects -->
     <section class="section" aria-labelledby="projects">
-      <h2 id="projects">Selected Projects</h2>
+      <h2 id="projects">Selected Projects & Course Work</h2>
       <div class="projects-grid" role="list">
+
+        <!-- Software Development (semester) -->
         <div class="project-card" role="listitem">
-          <h3>OBIA — Coastal Habitat Mapping</h3>
-          <p class="muted">Segmentation, rule-based classification and accuracy assessment.</p>
-          <p><strong>Tools:</strong> eCognition · QGIS · Python</p>
+          <h3>Practice Software Development — GitHub Projects</h3>
+          <p class="muted">Several semester projects demonstrating software engineering, plugins and analysis tools.</p>
+          <p><strong>Repos:</strong></p>
           <div style="margin-top:8px">
-            <a class="btn btn-primary" href="projects/obia-final-project.html">Open Project</a>
-            <a class="btn btn-ghost" href="files/projects/obia_final_project_spot.zip">Download ZIP</a>
+            <a class="btn btn-primary" href="https://github.com/SaharAbdulallim/PLUS_softwaredev_2025_Sahar" target="_blank" rel="noopener">PLUS_softwaredev_2025</a>
+            <a class="btn btn-ghost" href="https://github.com/SaharAbdulallim/A4_virtuGhan-analysis-plugin/tree/master" target="_blank" rel="noopener">A4_virtuGhan-plugin</a>
+            <a class="btn btn-ghost" href="https://github.com/virtughan/qgis-plugin" target="_blank" rel="noopener">virtughan/qgis-plugin</a>
           </div>
-          <img src="assets/images/projects/obia_final_map.png" alt="OBIA map">
+          <img src="assets/images/projects/practice_sw_demo.png" alt="Practice SW demo">
         </div>
 
+        <!-- Application Development (IP EO) -->
         <div class="project-card" role="listitem">
-          <h3>Object Detection on SPOT Images</h3>
-          <p class="muted">CNN pipeline for object detection on SPOT satellite imagery.</p>
-          <p><strong>Tools:</strong> Python · Keras · QGIS</p>
+          <h3>IP — Application Development (Earth Observation)</h3>
+          <p class="muted">Application development final project for EO — code & demo available.</p>
           <div style="margin-top:8px">
-            <a class="btn btn-primary" href="projects/obia-final-project.html">Open Project</a>
-            <a class="btn btn-ghost" href="https://github.com/your-username/spot-object-detection" target="_blank" rel="noopener">View Code</a>
+            <a class="btn btn-primary" href="https://github.com/SaharAbdulallim/IP_Application-Development-Earth-Observation-" target="_blank" rel="noopener">Open Repo</a>
+            <a class="btn" href="projects/obia-building-height-shadow.html">Related OBIA app</a>
           </div>
-          <img src="assets/images/projects/obia_final_map.png" alt="Object detection demo">
+          <img src="assets/images/projects/obia_building_height_demo.png" alt="App / OBIA demo">
         </div>
 
-        <div class="project-card" role="listitem">
-          <h3>Building Height from Shadows (OBIA)</h3>
-          <p class="muted">Shadow geometry + OBIA segmentation for building height estimation.</p>
-          <p><strong>Tools:</strong> Python · QGIS</p>
-          <div style="margin-top:8px">
-            <a class="btn btn-primary" href="projects/obia-building-height-shadow.html">Open Project</a>
-            <a class="btn" href="files/projects/building_height_morphology.pptx">Download PPT</a>
-          </div>
-          <img src="assets/images/projects/obia_building_height_demo.png" alt="Building height demo">
-        </div>
-
-        <div class="project-card" role="listitem">
-          <h3>Cairo Festival — Spatial DB (PostGIS)</h3>
-          <p class="muted">Schema design, spatial indexes and example spatial queries.</p>
-          <p><strong>Tools:</strong> PostgreSQL + PostGIS · QGIS</p>
-          <div style="margin-top:8px">
-            <a class="btn btn-primary" href="projects/cairo-festival-spatialdb.html">Open Project</a>
-            <a class="btn btn-ghost" href="files/projects/cairo_festival_spatialdb.zip">Download DB Export</a>
-          </div>
-          <img src="assets/images/projects/cairo_festival_demo.png" alt="Cairo festival DB">
-        </div>
-
-        <div class="project-card" role="listitem">
-          <h3>Fire Detection — GEE & EO Browser</h3>
-          <p class="muted">GEE script for burned-area indices and EO Browser visual workflows.</p>
-          <div style="margin-top:8px">
-            <a class="btn btn-primary" href="projects/fire-gee-eobrowser.html">Open Project</a>
-            <a class="btn" href="files/projects/fire_projects.zip">Download Samples</a>
-          </div>
-          <img src="assets/images/projects/fire_gee_demo.png" alt="Fire detection demo">
-        </div>
-
+        <!-- BIP Romania (storymap) -->
         <div class="project-card" role="listitem">
           <h3>BIP Romania — Drones for Environmental Sciences</h3>
-          <p class="muted">Drone orthomosaics, vegetation indices and StoryMap report.</p>
+          <p class="muted">Fieldwork with drones, orthomosaics, vegetation indices and a StoryMap report.</p>
           <div style="margin-top:8px">
-            <a class="btn btn-primary" href="projects/bip-drones-romania.html">Open Project</a>
+            <a class="btn btn-primary" href="https://storymaps.arcgis.com/stories/0bbfd0c4da634da2ade8cc8fe56e825b" target="_blank" rel="noopener">Open StoryMap</a>
             <a class="btn btn-ghost" href="files/projects/bip_romania_reports.zip">Download Reports</a>
           </div>
           <img src="assets/images/projects/bip_storymap.png" alt="BIP storymap">
         </div>
-      </div>
+
+        <!-- Spatial Thinking (class storymap) -->
+        <div class="project-card" role="listitem">
+          <h3>Spatial Thinking & Modelling — StoryMap</h3>
+          <p class="muted">Group StoryMap for the Spatial Thinking class (with a friend) — narrative + maps.</p>
+          <div style="margin-top:8px">
+            <a class="btn btn-primary" href="https://storymaps.arcgis.com/stories/a421563d625c4ad386b7f1962be37667" target="_blank" rel="noopener">Open StoryMap</a>
+            <a class="btn" href="projects.html">See course projects</a>
+          </div>
+          <img src="assets/images/projects/geounitrain_storymap.png" alt="Spatial thinking storymap">
+        </div>
+
+        <!-- Big Earth — GEE app + source -->
+        <div class="project-card" role="listitem">
+          <h3>Big Earth Data — Flood Detection (GEE)</h3>
+          <p class="muted">Interactive app detecting floods — hosted Earth Engine app + source script available.</p>
+          <div style="margin-top:8px">
+            <a class="btn btn-primary" href="https://temporal-ring-371012.projects.earthengine.app/view/detecting-flood-in-western-norway-in-november-2024" target="_blank" rel="noopener">Open App</a>
+            <a class="btn btn-ghost" href="https://code.earthengine.google.com/029917a4432981e6d45e61179e5ff2a3" target="_blank" rel="noopener">View Source</a>
+          </div>
+          <img src="assets/images/projects/fire_gee_demo.png" alt="GEE flood app demo">
+        </div>
+
+        <!-- GeoHumanitarian -->
+        <div class="project-card" role="listitem">
+          <h3>GeoHumanitarian Action — StoryMap</h3>
+          <p class="muted">StoryMap produced for GeoHumanitarian class — spatial analysis for humanitarian contexts.</p>
+          <div style="margin-top:8px">
+            <a class="btn btn-primary" href="https://storymaps.arcgis.com/stories/84adcfaf4488428da3f749bb1679ad37" target="_blank" rel="noopener">Open StoryMap</a>
+            <a class="btn" href="projects.html">Related reports</a>
+          </div>
+          <img src="assets/images/projects/hierarchical_demo.png" alt="GeoHumanitarian storymap">
+        </div>
+
+        <!-- OBIA final project (images coming) -->
+        <div class="project-card" role="listitem">
+          <h3>OBIA — Coastal Habitat Mapping (Final)</h3>
+          <p class="muted">OBIA final project: segmentation, features, rule-based classification. (Images & full zip will be uploaded.)</p>
+          <div style="margin-top:8px">
+            <a class="btn btn-primary" href="projects/obia-final-project.html">Open Project</a>
+            <a class="btn" href="files/projects/obia_final_project_spot.zip">Download (coming soon)</a>
+          </div>
+          <img src="assets/images/projects/obia_final_map.png" alt="OBIA final map">
+        </div>
+
+        <!-- Radar assignment (Advanced RS) -->
+        <div class="project-card" role="listitem">
+          <h3>Radar / SAR Project (Advanced Remote Sensing)</h3>
+          <p class="muted">SAR processing workflow and results (report + images to be uploaded).</p>
+          <div style="margin-top:8px">
+            <a class="btn btn-primary" href="projects/radar-project.html">Open Project</a>
+            <a class="btn" href="files/projects/radar_project.zip">Download (coming soon)</a>
+          </div>
+          <img src="assets/images/projects/radar_demo.png" alt="Radar project demo">
+        </div>
+
+        <!-- Database class (placeholder) -->
+        <div class="project-card" role="listitem">
+          <h3>Spatial Databases — Cairo Festival (placeholder)</h3>
+          <p class="muted">I will create the GitHub repo for the database project — once it's ready I'll link the repo and DB export here.</p>
+          <div style="margin-top:8px">
+            <a class="btn btn-primary" href="projects/cairo-festival-spatialdb.html">Open Project</a>
+            <a class="btn btn-ghost" href="#" aria-disabled="true">Repo (coming soon)</a>
+          </div>
+          <img src="assets/images/projects/cairo_festival_demo.png" alt="Cairo festival DB">
+        </div>
+
+      </div> <!-- end projects-grid -->
 
       <p style="margin-top:14px"><a class="btn-link" href="projects.html">View all projects & reports →</a></p>
     </section>
@@ -190,9 +225,7 @@
     </section>
 
     <div class="footer">Built with a starter template • Edit the files in the <code>/</code> folder to customize • Last updated: <!-- update date here --> </div>
-
   </div> <!-- end .container -->
-
 </div> <!-- end .space-scene -->
 
 </body>

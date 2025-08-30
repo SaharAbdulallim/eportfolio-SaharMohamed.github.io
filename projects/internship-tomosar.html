@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Internship — TomoSAR | Sahar Mohammed</title>
+  <title>Internship — TomoSAR | Sahar Mohamed</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
@@ -24,40 +24,29 @@
       <strong>Period:</strong> July 2025 – September 2025</p>
 
       <h3>Lab & Context</h3>
-      <p>Lab: EO Analytics, Salzburg University, Austria. The project used TomoSAR data (TropiSAR) for forest height estimation in Paracou, French Guiana. The goal was to estimate canopy and ground heights using deep learning and compare with traditional spectral/Tomographic methods.</p>
+      <p>The work used TomoSAR data (TropiSAR) for forest height estimation in Paracou, French Guiana. The aim was to estimate canopy and ground heights using deep learning, compare methods, and test generalization on unlabeled stacks.</p>
 
       <h3>Tasks</h3>
       <ol>
         <li><strong>Training a Tomographic SAR Neural Network (TSNN)</strong><br>
-            Trained a TSNN model to estimate forest canopy and ground heights in the Paracou region. Dataset split into training/validation/test; models tested on unlabeled data to evaluate generalization; training tweaks applied to improve performance.</li>
+            Trained a TSNN to estimate canopy and ground heights. Dataset split into training/validation/test; models evaluated on unlabeled data and tuned for performance.</li>
 
         <li><strong>Literature Review and Performance Comparison</strong><br>
-            Reviewed recent articles and compared TSNN performance with state-of-the-art approaches from the literature.</li>
+            Benchmarked TSNN against recent state-of-the-art methods.</li>
 
-        <li><strong>Development of Modified UNet Model (M-UNET)</strong><br>
-            Developed a modified UNet architecture (M-UNET) to estimate canopy and ground heights from patches (to capture spatial context). Evaluated on unlabeled datasets to assess generalization where lidar was not available.</li>
+        <li><strong>Development of Modified UNet (M-UNET)</strong><br>
+            Designed M-UNET to estimate heights from patches (capturing spatial context) and tested generalization without lidar.</li>
 
         <li><strong>Comparison with Traditional Methods</strong><br>
-            Compared TSNN and M-UNET with spectral estimation techniques (CAPON and MUSIC) to evaluate relative performance.</li>
+            Compared DL models (TSNN, M-UNET) with spectral/tomographic methods (e.g., CAPON, MUSIC).</li>
       </ol>
 
-      <h3>Learning Objectives</h3>
-      <p>The internship aimed to deepen understanding of forest height estimation from TomoSAR and to build DL models that estimate canopy/top-of-canopy heights without reliance on lidar. The practical experience included handling TomoSAR covariance matrices from fully-polarized SLC images (HH, HV, VV), model training, and result interpretation. This complemented prior BIP drone work where lidar was costly and limited in spatial coverage.</p>
-
-      <h3>Recommendations for Future Intern</h3>
-      <ul>
-        <li><strong>Understand SAR fundamentals:</strong> polarizations, processing chains, and data formats.</li>
-        <li><strong>Deep learning skills:</strong> training networks, tensor handling, data splitting and augmentation.</li>
-        <li><strong>Forestry knowledge:</strong> domain understanding of tropical forests to interpret model outputs appropriately.</li>
-      </ul>
-
-      <h3>Additional Notes</h3>
-      <p>The internship emphasized mastering TomoSAR formats (covariance matrices) and combining DL models with traditional methods to improve height estimation accuracy.</p>
+      <h3>Learning & Notes</h3>
+      <p>The internship deepened my understanding of TomoSAR data formats (covariance matrices, full-pol SLC) and practical DL model training for geophysical variables. Combining DL with traditional approaches improved estimation robustness.</p>
 
       <p style="margin-top:12px">
         <a class="btn btn-primary" href="../files/projects/internship_report_tomosar.pdf">Download Internship Report (PDF)</a>
         <a class="btn btn-ghost" href="https://github.com/SaharAbdulallim/Deep-Learning-in-TomoSAR" target="_blank" rel="noopener">Open GitHub Repo</a>
-        <a class="btn" href="../files/projects/internship_tomosar_notebooks.zip">Download Notebooks (zip)</a>
       </p>
     </div>
   </div>

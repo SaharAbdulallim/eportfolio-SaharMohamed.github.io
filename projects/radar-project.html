@@ -16,35 +16,32 @@
   <div class="container">
     <a href="../projects.html">← Back to Projects</a>
     <div class="section">
-      <h1>Digital Earth: Big Earth Data Concepts — Radar Displacement Map</h1>
-      <p class="muted">Exercise 6 / Assignment 02 — Radar Displacement Map (Session 6)</p>
-      <p><strong>By:</strong> Sahar Mohamed — Student ID: 12413882</p>
+      <h1>Advanced Remote Sensing Class - Radar Displacement Map</h1>
+      <p class="muted"> Radar Displacement Map </p>
+      <p><strong>By:</strong> Sahar Mohamed</p>
 
       <h2>Case Study: Displacement Map for Taal Volcano (Philippines) — 12 January 2020</h2>
-      <p>I selected Taal Volcano (large caldera in Taal Lake). I downloaded SAR images for November (before) and January (after) and performed the following steps:</p>
+      <p>I selected Taal Volcano and used SAR images from before and after the event. The workflow included:</p>
 
       <h3>Workflow</h3>
       <ol>
-        <li><strong>Co-registration:</strong> Selected IW2 and VV polarization, performed orbit correction and stacked before/after sub-swaths to align pixels.</li>
-        <li><strong>Enhanced Spectral Diversity:</strong> Applied to improve coregistration (range/azimuth shift corrections and ionospheric correction).</li>
-        <li><strong>Interferogram formation:</strong> Cross-multiply master with complex conjugate of slave image to produce interferogram. Explained contributors to phase (flat-earth, topography, atmosphere, noise, displacement).</li>
-        <li><strong>Deburst:</strong> Remove seamlines between bursts to create continuous frames.</li>
-        <li><strong>Topographic removal:</strong> Remove topography to isolate displacement + atmosphere + noise. Interferogram shown in rainbow color scale (-π to +π).</li>
-        <li><strong>Multi-looking:</strong> Square pixels, trade off resolution for noise reduction (coarser resolution acceptable).</li>
-        <li><strong>Phase filtering:</strong> Filter noise (I used filter parameter ~0.6; adjust as needed).</li>
-        <li><strong>Phase unwrapping:</strong> SNAPHU import/export, unwrap the phase to produce continuous displacement map.</li>
-        <li><strong>Displacement map:</strong> Produce displacement output, apply terrain correction (add topography back) and export as GeoTIFF or for Google Earth.</li>
+        <li>Co-registration and orbit correction (IW2, VV)</li>
+        <li>Enhanced spectral diversity for improved alignment</li>
+        <li>Interferogram formation and topographic removal</li>
+        <li>Deburst, multi-looking, phase filtering and phase unwrapping (SNAPHU)</li>
+        <li>Generate displacement map, terrain-correct and export</li>
       </ol>
 
       <h3>Discussion</h3>
-      <p>The fringes in the interferogram indicate ground deformation — the closer the fringes, the larger the displacement. For the Taal 2020 eruption the purple/pink colors indicate subsidence while blues indicate relative elevation change or uplift depending on color mapping. Terrain correction maps the displacement onto the real surface for interpretation.</p>
+      <p>The interferogram fringes show ground deformation, closer fringes indicate larger surface displacement. After phase unwrapping and terrain correction the displacement map can be interpreted and exported as GeoTIFF for visualization in GIS and Google Earth.</p>
 
-      <h3>Steps & Visuals</h3>
-      <p>Key steps included co-registration, deburst, enhanced spectral diversity, interferogram formation, phase filtering, unwrapping and terrain correction. Each step improves the signal-to-noise ratio and isolates true displacement.</p>
+      <h3>Figures (upload two images)</h3>
+      <p class="muted">Upload two images to <code>assets/images/radar_photo1.png</code> and <code>assets/images/radar_photo2.png</code>. They will appear below.</p>
 
-      <p style="margin-top:12px">
-        <a class="btn btn-primary" href="../files/projects/radar_project.zip">Download Report & Data (zip)</a>
-      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <img src="assets\images\projects\radar_photo1.png" alt="Radar figure 1 (upload assets/images/radar_photo1.png)" style="max-width:49%;border-radius:8px;border:1px solid rgba(255,255,255,0.04)" />
+        <img src="assets\images\projects\radar_photo2.png" alt="Radar figure 2 (upload assets/images/radar_photo2.png)" style="max-width:49%;border-radius:8px;border:1px solid rgba(255,255,255,0.04)" />
+      </div>
     </div>
   </div>
 </div>

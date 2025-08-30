@@ -1,5 +1,5 @@
 /* assets/css/style.css
-   Space / Earth / Tech theme — logos above name (small), larger profile
+   Space / Earth / Tech theme — logos above name (slightly larger), larger profile
 */
 
 :root{
@@ -81,26 +81,26 @@ body::before{
 .orbit.o2{ width:460px; height:460px; right:-20px; top:-30px; opacity:0.06; animation-duration:40s; }
 @keyframes orbit{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
 
-/* Layout: container + header */
+/* Layout: container + top logos */
 .container{ max-width:var(--maxw); margin:36px auto; padding:22px; position:relative; z-index:2; }
 
-/* TOP small logos above name/title */
+/* TOP slightly larger logos above name/title */
 .top-logos{
   display:flex;
   justify-content:center;
-  gap:12px;
+  gap:14px;
   align-items:center;
   margin-bottom:12px;
   flex-wrap:wrap;
 }
 .top-logos img{
-  height:28px;          /* SMALL logos as requested */
+  height:36px;          /* increased size as requested */
   width:auto;
   object-fit:contain;
   opacity:0.98;
   border-radius:6px;
   background: rgba(255,255,255,0.02);
-  padding:4px;
+  padding:6px;
   border:1px solid rgba(255,255,255,0.02);
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }

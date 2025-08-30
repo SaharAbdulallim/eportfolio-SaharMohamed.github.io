@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sahar Mohamed — Portfolio</title>
+  <title>Sahar Mohammed — Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
+<!-- Space scene wrapper -->
 <div class="space-scene" aria-hidden="false">
   <div class="scene-decor" aria-hidden="true"></div>
   <div class="planet" aria-hidden="true"></div>
@@ -15,36 +16,47 @@
   <div class="orbit o2" aria-hidden="true"></div>
 
   <div class="container">
+    <!-- Header (profile + logos + nav) -->
     <header class="header" role="banner">
-      <img src="assets\images\projects\profile.png" alt="Profile photo" />
+      <!-- profile and logos placed in assets/images/projects/ as you planned -->
+      <img src="assets/images/projects/profile.png" alt="Profile photo" />
       <div>
         <h1>Sahar Mohammed</h1>
         <div style="color:var(--muted)">Erasmus Mundus MSc — Copernicus Digital Earth · Remote Sensing & GeoAI</div>
-        <nav class="nav" aria-label="Main navigation">
+
+        <!-- Brand logos row (images in assets/images/projects/) -->
+        <div class="brand-logos" aria-hidden="false" style="margin-top:10px">
+          <img src="assets/images/projects/logo_eu.png" alt="EU logo" title="EU" />
+          <img src="assets/images/projects/logo_copernicus.png" alt="Copernicus logo" title="Copernicus" />
+          <img src="assets/images/projects/logo_salzburg.png" alt="Salzburg University logo" title="Salzburg University" />
+          <img src="assets/images/projects/logo_ubs.png" alt="UBS logo" title="UBS" />
+        </div>
+
+        <div class="nav" style="margin-top:12px" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="projects.html">Projects</a>
           <a href="volunteering.html">Volunteering</a>
           <a href="contact.html">Contact</a>
-        </nav>
+        </div>
       </div>
     </header>
 
-    <!-- Hero (no CV/courses/project buttons as requested) -->
+    <!-- Hero -->
     <section class="hero" aria-labelledby="intro-heading">
       <strong class="badge">MSc Student</strong>
-      <h2 id="intro-heading" style="margin:10px 0 6px;color:var(--text)">Hi! I'm Sahar</h2>
+      <h2 id="intro-heading" style="margin:10px 0 6px;color:var(--text)">Hi — I'm Sahar</h2>
       <p class="muted" style="margin:0 0 12px">
-        I work with satellite imagery, AI, and GeoData Science. Below are selected projects, internship work, and publications.
+        I work with satellite imagery, AI, and GeoData Science. This site collects my courses, projects, internships and volunteering work.
       </p>
     </section>
 
-    <!-- Internship highlight (with report link) -->
+    <!-- Internship highlight -->
     <section class="section" aria-labelledby="internship">
-      <h2 id="internship">🛰️ Internship (highlight)</h2>
+      <h2 id="internship">🚀 Internship (highlight)</h2>
       <div class="highlight">
         <strong>Deep Learning for TomoSAR — Internship</strong>
-        <p class="muted" style="margin:8px 0 10px">Applied research using TomoSAR stacks; built two deep-learning models and produced notebooks + a detailed internship report (embedded).</p>
+        <p class="muted" style="margin:8px 0 10px">Applied research using TomoSAR stacks; built two deep-learning models and produced a detailed internship report.</p>
         <div style="margin-top:8px">
           <a class="btn btn-primary" href="projects/internship-tomosar.html">Open Internship Page</a>
           <a class="btn btn-ghost" href="https://github.com/SaharAbdulallim/Deep-Learning-in-TomoSAR" target="_blank" rel="noopener">GitHub Repo</a>
@@ -52,23 +64,24 @@
       </div>
     </section>
 
-    <!-- Projects grid (no BIP download button; removed unrelated/duplicate links) -->
+    <!-- Featured Projects -->
     <section class="section" aria-labelledby="projects">
       <h2 id="projects">Selected Projects & Course Work</h2>
       <div class="projects-grid" role="list">
 
-        <!-- Practice software dev (kept) -->
+        <!-- Practice software dev (semester) -->
         <div class="project-card" role="listitem">
           <h3>Practice Software Development — GitHub Projects</h3>
-          <p class="muted">Semester projects: plugins, analysis tools and software demos (links to repos).</p>
+          <p class="muted">Semester projects: QGIS plugins, analysis tools and software demos.</p>
           <div style="margin-top:8px">
-            <a class="btn btn-primary" href="https://github.com/SaharAbdulallim/PLUS_softwaredev_2025_Sahar" target="_blank" rel="noopener">Repo</a>
-            <a class="btn btn-ghost" href="https://github.com/SaharAbdulallim/A4_virtuGhan-analysis-plugin/tree/master" target="_blank" rel="noopener">virtughan-plugin</a>
+            <a class="btn btn-primary" href="https://github.com/SaharAbdulallim/PLUS_softwaredev_2025_Sahar" target="_blank" rel="noopener">PLUS_softwaredev_2025</a>
+            <a class="btn btn-ghost" href="https://github.com/SaharAbdulallim/A4_virtuGhan-analysis-plugin/tree/master" target="_blank" rel="noopener">VirtuGhan Package implementation for Romania vegetation analysis</a>
+            <a class="btn btn-ghost" href="https://github.com/virtughan/qgis-plugin" target="_blank" rel="noopener">virtughan/qgis-plugin</a>
           </div>
           <img src="assets/images/projects/practice_sw_demo.png" alt="Practice SW demo">
         </div>
 
-        <!-- IP Application (removed related OBIA app link) -->
+        <!-- IP Application (Earth Observation) -->
         <div class="project-card" role="listitem">
           <h3>IP — Application Development (Earth Observation)</h3>
           <p class="muted">Final application development project for EO — code and demo available in repo.</p>
@@ -78,7 +91,7 @@
           <img src="assets/images/projects/obia_building_height_demo.png" alt="App demo">
         </div>
 
-        <!-- BIP (removed download) -->
+        <!-- BIP Romania -->
         <div class="project-card" role="listitem">
           <h3>BIP Romania — Drones for Environmental Sciences</h3>
           <p class="muted">Drone orthomosaics, vegetation indices and StoryMap report.</p>
@@ -88,7 +101,7 @@
           <img src="assets/images/projects/bip_storymap.png" alt="BIP storymap">
         </div>
 
-        <!-- Spatial Thinking (removed link to 'see course projects') -->
+        <!-- Spatial Thinking -->
         <div class="project-card" role="listitem">
           <h3>Spatial Thinking & Modelling — StoryMap</h3>
           <p class="muted">Group StoryMap for Spatial Thinking and Modelling — narrative and visualizations.</p>
@@ -98,7 +111,7 @@
           <img src="assets/images/projects/geounitrain_storymap.png" alt="Spatial thinking storymap">
         </div>
 
-        <!-- Big Earth (keeps links) -->
+        <!-- Big Earth (GEE) -->
         <div class="project-card" role="listitem">
           <h3>Big Earth Data — Flood Detection (GEE)</h3>
           <p class="muted">Earth Engine app & script for flood detection (live app + source).</p>
@@ -109,7 +122,7 @@
           <img src="assets/images/projects/fire_gee_demo.png" alt="GEE flood app demo">
         </div>
 
-        <!-- GeoHumanitarian (removed 'related reports' link) -->
+        <!-- GeoHumanitarian -->
         <div class="project-card" role="listitem">
           <h3>GeoHumanitarian Action — StoryMap</h3>
           <p class="muted">StoryMap produced for GeoHumanitarian class — spatial analysis for humanitarian contexts.</p>
@@ -119,7 +132,7 @@
           <img src="assets/images/projects/hierarchical_demo.png" alt="GeoHumanitarian storymap">
         </div>
 
-        <!-- OBIA (images coming) -->
+        <!-- OBIA final -->
         <div class="project-card" role="listitem">
           <h3>OBIA — Coastal Habitat Mapping (Final)</h3>
           <p class="muted">Final OBIA project: segmentation, features, rule-based classification. Images & zip will be uploaded soon.</p>
@@ -129,7 +142,7 @@
           <img src="assets/images/projects/obia_final_map.png" alt="OBIA final map">
         </div>
 
-        <!-- Radar (now includes the assignment content on its page) -->
+        <!-- Radar -->
         <div class="project-card" role="listitem">
           <h3>Radar / SAR Project (Advanced Remote Sensing)</h3>
           <p class="muted">SAR processing workflow and displacement map assignment (Taal Volcano case study).</p>
@@ -139,14 +152,25 @@
           <img src="assets/images/projects/radar_demo.png" alt="Radar project demo">
         </div>
 
-        <!-- Spatial DB placeholder -->
+        <!-- Cairo Festival (DB) -->
         <div class="project-card" role="listitem">
-          <h3>Spatial Databases — Cairo Festival (Final)</h3>
-          <p class="muted">Database backend design for an event management WebGIS (full description on project page).</p>
+          <h3>Cairo Festival — Spatial DB</h3>
+          <p class="muted">Database backend design for event management WebGIS — schema, spatial data and proximity queries.</p>
           <div style="margin-top:8px">
             <a class="btn btn-primary" href="projects/cairo-festival-spatialdb.html">Open Project</a>
+            <a class="btn btn-ghost" href="https://github.com/SaharAbdulallim/cairo-festival-spatialdb" target="_blank" rel="noopener">GitHub Repo</a>
           </div>
           <img src="assets/images/projects/cairo_festival_demo.png" alt="Cairo festival DB">
+        </div>
+
+        <!-- Internship card repeated (optional) -->
+        <div class="project-card" role="listitem">
+          <h3>Internship — TomoSAR</h3>
+          <p class="muted">Forest canopy & ground height estimation using TomoSAR and deep learning (TSNN, M-UNET).</p>
+          <div style="margin-top:8px">
+            <a class="btn btn-primary" href="projects/internship-tomosar.html">Open Internship Page</a>
+          </div>
+          <img src="assets/images/projects/internship_cover.png" alt="Internship cover">
         </div>
 
       </div> <!-- end projects-grid -->

@@ -1,6 +1,5 @@
 /* assets/css/style.css
-   Space / Earth / Tech theme — wider layout, bigger profile, logos in assets/images/projects/
-   Replace the entire file with this content.
+   Space / Earth / Tech theme — logos above name (small), larger profile
 */
 
 :root{
@@ -11,12 +10,12 @@
   --text: #eaf6fb;
   --muted: #9fb8cc;
   --glass-border: rgba(255,255,255,0.04);
-  --maxw: 1280px;        /* WIDER layout */
+  --maxw: 1280px;
   --card-radius: 14px;
   font-family: Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-/* Base resets */
+/* Base */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -50,7 +49,7 @@ body::before{
 }
 @keyframes driftStars{ from{transform:translateY(0)} to{transform:translateY(-140px)} }
 
-/* Scene wrapper (decor + planet) */
+/* Scene wrapper */
 .space-scene{ position:relative; z-index:1; padding-top:18px; padding-bottom:28px; }
 .space-scene .scene-decor{ pointer-events:none; position:absolute; inset:0; z-index:0;
   background-image:
@@ -63,7 +62,7 @@ body::before{
   filter: blur(2px);
 }
 
-/* Planet glow image: path relative to CSS file (css located at assets/css/) */
+/* Planet glow */
 .space-scene .planet{
   position:absolute; right:-140px; top:-140px; width:520px; height:520px; border-radius:50%; z-index:0;
   background-image:
@@ -74,7 +73,6 @@ body::before{
   background-size:cover;
   box-shadow: 0 30px 120px rgba(165,124,255,0.12), 0 6px 30px rgba(6,12,30,0.6);
   opacity:0.98;
-  transform: translateZ(0);
 }
 
 /* Orbits */
@@ -83,69 +81,91 @@ body::before{
 .orbit.o2{ width:460px; height:460px; right:-20px; top:-30px; opacity:0.06; animation-duration:40s; }
 @keyframes orbit{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
 
-/* Container & header */
+/* Layout: container + header */
 .container{ max-width:var(--maxw); margin:36px auto; padding:22px; position:relative; z-index:2; }
-.header{ display:flex; gap:18px; align-items:center; z-index:3; }
-.header img{
-  width:140px; height:140px; border-radius:16px; object-fit:cover;
-  border:1px solid rgba(255,255,255,0.06); box-shadow: 0 18px 44px rgba(0,0,0,0.65);
+
+/* TOP small logos above name/title */
+.top-logos{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  align-items:center;
+  margin-bottom:12px;
+  flex-wrap:wrap;
+}
+.top-logos img{
+  height:28px;          /* SMALL logos as requested */
+  width:auto;
+  object-fit:contain;
+  opacity:0.98;
+  border-radius:6px;
+  background: rgba(255,255,255,0.02);
+  padding:4px;
+  border:1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-/* header text + nav */
-.header h1{ margin:0; font-size:22px; color:var(--text) }
+/* header */
+.header{ display:flex; gap:20px; align-items:center; z-index:3; }
+
+/* profile image */
+.profile-img{
+  width:160px;
+  height:160px;
+  border-radius:18px;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.65);
+}
+
+/* header content */
+.header-content{ flex:1; min-width:0; }
+
+/* title */
+.title-row{ display:flex; flex-direction:column; gap:6px; }
+.title-row h1{ margin:0; font-size:26px; color:var(--text); }
+.subtitle{ color:var(--muted); font-size:14px; }
+
+/* nav */
 .nav{ margin-top:12px }
-.nav a{ color:var(--teal); font-weight:700; padding:6px 10px; border-radius:10px; text-decoration:none; }
+.nav a{ margin-right:12px; color:var(--teal); text-decoration:none; font-weight:700; padding:6px 10px; border-radius:8px; }
 .nav a:hover{ background: linear-gradient(90deg, rgba(111,230,216,0.06), rgba(165,124,255,0.05)); }
 
-/* Brand logos row (HTML places logos inside header) */
-.header .brand-logos{ display:flex; gap:10px; align-items:center; margin-top:8px; flex-wrap:wrap; }
-.header .brand-logos img{
-  height:34px; width:auto; opacity:0.98; border-radius:6px;
-  background: rgba(255,255,255,0.02); padding:6px; border:1px solid rgba(255,255,255,0.02);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-}
-
-/* Hero & sections */
+/* Hero and sections */
 .hero{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:22px; border-radius:var(--card-radius); border:1px solid var(--glass-border); box-shadow: 0 10px 36px rgba(2,6,23,0.55); }
 .badge{ display:inline-block; padding:6px 12px; border-radius:999px; background: var(--accent-gradient); color:#021a19; font-weight:800; }
 
-/* Section and cards */
+/* Projects */
 .section{ margin-top:26px; padding:20px; border-radius:var(--card-radius); border:1px solid var(--glass-border); background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.01)); box-shadow: 0 10px 30px rgba(2,6,23,0.5); }
-.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
-.card{ padding:16px; border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.02); box-shadow:0 8px 24px rgba(3,7,20,0.45); }
-
-/* Projects grid — wider cards */
 .projects-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:20px; margin-top:10px; }
-.project-card{ padding:18px; border-radius:14px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.03); box-shadow: 0 12px 36px rgba(2,6,23,0.5); transition: transform .28s cubic-bezier(.2,.8,.2,1); }
+
+/* project card */
+.project-card{ padding:18px; border-radius:14px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border:1px solid rgba(255,255,255,0.03); box-shadow: 0 12px 36px rgba(2,6,23,0.5); transition: transform .28s; }
 .project-card:hover{ transform:translateY(-8px); box-shadow: 0 26px 50px rgba(2,6,23,0.6); }
 .project-card h3{ margin:0 0 8px 0; color:var(--text); font-size:18px; }
 .project-card p{ margin:6px 0; color:var(--muted); }
 .project-card img{ width:100%; height:180px; object-fit:cover; border-radius:10px; margin-top:10px; border:1px solid rgba(255,255,255,0.02); }
 
-/* Highlight */
-.highlight{ padding:14px; border-radius:12px; background: linear-gradient(90deg, rgba(111,230,216,0.06), rgba(165,124,255,0.05)); border:1px solid rgba(255,255,255,0.03); }
-
-/* Buttons */
+/* buttons */
 .btn{ display:inline-block; padding:10px 16px; border-radius:12px; text-decoration:none; font-weight:800; color:#031617; background:rgba(255,255,255,0.98); border:1px solid rgba(255,255,255,0.04); margin-right:8px; }
 .btn-primary{ background: linear-gradient(90deg,var(--teal),var(--purple)); color:#021a19; box-shadow: 0 10px 30px rgba(111,230,216,0.05); }
 .btn-ghost{ background:transparent; color:var(--teal); border:1px solid rgba(111,230,216,0.10); }
-.btn-link{ background:transparent; color:var(--purple); font-weight:700; }
 
-/* Footer */
+/* footer */
 .footer{ margin:36px 0; color:var(--muted); text-align:center; font-size:13px; opacity:0.95; }
 
-/* Responsive adjustments */
-@media (max-width:980px){
-  .projects-grid{ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-  .project-card img{ height:150px; }
+/* responsive tweaks */
+@media (max-width:920px){
+  .header{ align-items:flex-start; gap:14px; }
+  .profile-img{ width:120px; height:120px; }
+  .title-row h1{ font-size:20px; }
 }
-@media (max-width:720px){
-  .header{ flex-direction:row; align-items:flex-start; }
-  .header img{ width:110px; height:110px; }
-  .brand-logos{ margin-top:8px; }
-  .container{ padding:14px; }
-  .space-scene .planet{ display:none; }
+@media (max-width:640px){
+  .header{ flex-direction:column; align-items:center; text-align:center; }
+  .header-content{ width:100%; }
+  .top-logos{ justify-content:center; margin-bottom:12px; }
+  .nav{ margin-top:8px }
 }
 
-/* Accessibility */
+/* accessibility */
 :focus-visible{ outline:3px solid rgba(165,124,255,0.4); outline-offset:3px; border-radius:8px; }

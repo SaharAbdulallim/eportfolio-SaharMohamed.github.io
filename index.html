@@ -16,29 +16,32 @@
   <div class="orbit o2" aria-hidden="true"></div>
 
   <div class="container">
-    <!-- Header (profile + logos + nav) -->
-    <header class="header" role="banner">
-      <!-- profile and logos placed in assets/images/projects/ as you planned -->
-      <img src="assets/images/projects/profile.png" alt="Profile photo" />
-      <div>
-        <h1>Sahar Mohammed</h1>
-        <div style="color:var(--muted)">Erasmus Mundus MSc — Copernicus Digital Earth · Remote Sensing & GeoAI</div>
 
-        <!-- Brand logos row (images in assets/images/projects/) -->
-        <div class="brand-logos" aria-hidden="false" style="margin-top:10px">
-          <img src="assets/images/projects/logo_eu.png" alt="EU logo" title="EU" />
-          <img src="assets/images/projects/logo_copernicus.png" alt="Copernicus logo" title="Copernicus" />
-          <img src="assets/images/projects/logo_salzburg.png" alt="Salzburg University logo" title="Salzburg University" />
-          <img src="assets/images/projects/logo_ubs.png" alt="UBS logo" title="UBS" />
+    <!-- TOP LOGOS row (small, centered above name/title) -->
+    <div class="top-logos" aria-hidden="false" title="Affiliations & partners">
+      <img src="assets/images/projects/logo_eu.png" alt="EU logo" />
+      <img src="assets/images/projects/logo_copernicus.png" alt="Copernicus logo" />
+      <img src="assets/images/projects/logo_salzburg.png" alt="Salzburg University logo" />
+      <img src="assets/images/projects/logo_ubs.png" alt="UBS logo" />
+    </div>
+
+    <!-- Header: profile photo left, content right -->
+    <header class="header" role="banner">
+      <img class="profile-img" src="assets/images/projects/profile.png" alt="Profile photo — Sahar Mohammed" />
+
+      <div class="header-content">
+        <div class="title-row">
+          <h1>Sahar Mohammed</h1>
+          <div class="subtitle">Erasmus Mundus MSc — Copernicus Digital Earth · Remote Sensing & GeoAI</div>
         </div>
 
-        <div class="nav" style="margin-top:12px" aria-label="Main navigation">
+        <nav class="nav" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="projects.html">Projects</a>
           <a href="volunteering.html">Volunteering</a>
           <a href="contact.html">Contact</a>
-        </div>
+        </nav>
       </div>
     </header>
 
@@ -53,7 +56,7 @@
 
     <!-- Internship highlight -->
     <section class="section" aria-labelledby="internship">
-      <h2 id="internship">🚀 Internship (highlight)</h2>
+      <h2 id="internship">🛰️ Internship (Highlight)</h2>
       <div class="highlight">
         <strong>Deep Learning for TomoSAR — Internship</strong>
         <p class="muted" style="margin:8px 0 10px">Applied research using TomoSAR stacks; built two deep-learning models and produced a detailed internship report.</p>
@@ -69,19 +72,19 @@
       <h2 id="projects">Selected Projects & Course Work</h2>
       <div class="projects-grid" role="list">
 
-        <!-- Practice software dev (semester) -->
+        <!-- Practice software dev -->
         <div class="project-card" role="listitem">
           <h3>Practice Software Development — GitHub Projects</h3>
           <p class="muted">Semester projects: QGIS plugins, analysis tools and software demos.</p>
           <div style="margin-top:8px">
             <a class="btn btn-primary" href="https://github.com/SaharAbdulallim/PLUS_softwaredev_2025_Sahar" target="_blank" rel="noopener">PLUS_softwaredev_2025</a>
-            <a class="btn btn-ghost" href="https://github.com/SaharAbdulallim/A4_virtuGhan-analysis-plugin/tree/master" target="_blank" rel="noopener">VirtuGhan Package implementation for Romania vegetation analysis</a>
+            <a class="btn btn-ghost" href="https://github.com/SaharAbdulallim/A4_virtuGhan-analysis-plugin/tree/master" target="_blank" rel="noopener">VirtuGhan Package</a>
             <a class="btn btn-ghost" href="https://github.com/virtughan/qgis-plugin" target="_blank" rel="noopener">virtughan/qgis-plugin</a>
           </div>
           <img src="assets/images/projects/practice_sw_demo.png" alt="Practice SW demo">
         </div>
 
-        <!-- IP Application (Earth Observation) -->
+        <!-- IP Application -->
         <div class="project-card" role="listitem">
           <h3>IP — Application Development (Earth Observation)</h3>
           <p class="muted">Final application development project for EO — code and demo available in repo.</p>
@@ -111,7 +114,7 @@
           <img src="assets/images/projects/geounitrain_storymap.png" alt="Spatial thinking storymap">
         </div>
 
-        <!-- Big Earth (GEE) -->
+        <!-- Big Earth -->
         <div class="project-card" role="listitem">
           <h3>Big Earth Data — Flood Detection (GEE)</h3>
           <p class="muted">Earth Engine app & script for flood detection (live app + source).</p>
@@ -132,7 +135,7 @@
           <img src="assets/images/projects/hierarchical_demo.png" alt="GeoHumanitarian storymap">
         </div>
 
-        <!-- OBIA final -->
+        <!-- OBIA -->
         <div class="project-card" role="listitem">
           <h3>OBIA — Coastal Habitat Mapping (Final)</h3>
           <p class="muted">Final OBIA project: segmentation, features, rule-based classification. Images & zip will be uploaded soon.</p>
@@ -152,7 +155,7 @@
           <img src="assets/images/projects/radar_demo.png" alt="Radar project demo">
         </div>
 
-        <!-- Cairo Festival (DB) -->
+        <!-- Cairo Festival DB -->
         <div class="project-card" role="listitem">
           <h3>Cairo Festival — Spatial DB</h3>
           <p class="muted">Database backend design for event management WebGIS — schema, spatial data and proximity queries.</p>
@@ -163,7 +166,7 @@
           <img src="assets/images/projects/cairo_festival_demo.png" alt="Cairo festival DB">
         </div>
 
-        <!-- Internship card repeated (optional) -->
+        <!-- Internship -->
         <div class="project-card" role="listitem">
           <h3>Internship — TomoSAR</h3>
           <p class="muted">Forest canopy & ground height estimation using TomoSAR and deep learning (TSNN, M-UNET).</p>

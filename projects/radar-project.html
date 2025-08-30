@@ -1,11 +1,52 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Radar Project — SAR processing</title><style>body{font-family:system-ui,Segoe UI,Roboto,Arial;max-width:980px;margin:28px auto;padding:0 18px}a{color:#2b6cb0}</style></head><body>
-<a href="/projects.html">← Back to Projects</a>
-<h1>Radar Project — SAR processing</h1>
-<p><strong>Course:</strong> Radar / SAR processing</p>
-<p>SAR processing chain: speckle filtering, calibration, backscatter analysis and change detection.</p>
-<img src="/assets/images/projects/radar_demo.png" alt="Radar Project — SAR processing" style="max-width:100%;border:1px solid #eee;border-radius:6px"/>
-<h3>Artifacts & Links</h3>
-<ul><li>Download code & data: <a href="/files/projects/radar_project.zip">radar_project.zip</a></li></ul>
-<hr/><footer style="color:#666">Replace placeholders with your real links/files.</footer>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Radar Displacement Map — Sahar Mohamed</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+<div class="space-scene">
+  <div class="scene-decor"></div>
+  <div class="planet"></div>
+  <div class="orbit o1"></div>
+  <div class="orbit o2"></div>
+
+  <div class="container">
+    <a href="../projects.html">← Back to Projects</a>
+    <div class="section">
+      <h1>Digital Earth: Big Earth Data Concepts — Radar Displacement Map</h1>
+      <p class="muted">Exercise 6 / Assignment 02 — Radar Displacement Map (Session 6)</p>
+      <p><strong>By:</strong> Sahar Mohamed — Student ID: 12413882</p>
+
+      <h2>Case Study: Displacement Map for Taal Volcano (Philippines) — 12 January 2020</h2>
+      <p>I selected Taal Volcano (large caldera in Taal Lake). I downloaded SAR images for November (before) and January (after) and performed the following steps:</p>
+
+      <h3>Workflow</h3>
+      <ol>
+        <li><strong>Co-registration:</strong> Selected IW2 and VV polarization, performed orbit correction and stacked before/after sub-swaths to align pixels.</li>
+        <li><strong>Enhanced Spectral Diversity:</strong> Applied to improve coregistration (range/azimuth shift corrections and ionospheric correction).</li>
+        <li><strong>Interferogram formation:</strong> Cross-multiply master with complex conjugate of slave image to produce interferogram. Explained contributors to phase (flat-earth, topography, atmosphere, noise, displacement).</li>
+        <li><strong>Deburst:</strong> Remove seamlines between bursts to create continuous frames.</li>
+        <li><strong>Topographic removal:</strong> Remove topography to isolate displacement + atmosphere + noise. Interferogram shown in rainbow color scale (-π to +π).</li>
+        <li><strong>Multi-looking:</strong> Square pixels, trade off resolution for noise reduction (coarser resolution acceptable).</li>
+        <li><strong>Phase filtering:</strong> Filter noise (I used filter parameter ~0.6; adjust as needed).</li>
+        <li><strong>Phase unwrapping:</strong> SNAPHU import/export, unwrap the phase to produce continuous displacement map.</li>
+        <li><strong>Displacement map:</strong> Produce displacement output, apply terrain correction (add topography back) and export as GeoTIFF or for Google Earth.</li>
+      </ol>
+
+      <h3>Discussion</h3>
+      <p>The fringes in the interferogram indicate ground deformation — the closer the fringes, the larger the displacement. For the Taal 2020 eruption the purple/pink colors indicate subsidence while blues indicate relative elevation change or uplift depending on color mapping. Terrain correction maps the displacement onto the real surface for interpretation.</p>
+
+      <h3>Steps & Visuals</h3>
+      <p>Key steps included co-registration, deburst, enhanced spectral diversity, interferogram formation, phase filtering, unwrapping and terrain correction. Each step improves the signal-to-noise ratio and isolates true displacement.</p>
+
+      <p style="margin-top:12px">
+        <a class="btn btn-primary" href="../files/projects/radar_project.zip">Download Report & Data (zip)</a>
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

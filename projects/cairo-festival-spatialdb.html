@@ -1,11 +1,67 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Cairo Festival — Spatial DB</title><style>body{font-family:system-ui,Segoe UI,Roboto,Arial;max-width:980px;margin:28px auto;padding:0 18px}a{color:#2b6cb0}</style></head><body>
-<a href="/projects.html">← Back to Projects</a>
-<h1>Cairo Festival — Spatial DB</h1>
-<p><strong>Course:</strong> Spatial Databases</p>
-<p>Spatial DB design and queries for Cairo Festival (venues, transport).</p>
-<img src="/assets/images/projects/cairo_festival_demo.png" alt="Cairo Festival — Spatial DB" style="max-width:100%;border:1px solid #eee;border-radius:6px"/>
-<h3>Artifacts & Links</h3>
-<ul><li>Download DB export & ER diagram: <a href="/files/projects/cairo_festival_spatialdb.zip">cairo_festival_spatialdb.zip</a></li></ul>
-<hr/><footer style="color:#666">Replace placeholders with your real links/files.</footer>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cairo Festival — Spatial Database | Sahar Mohamed</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+<div class="space-scene">
+  <div class="scene-decor"></div>
+  <div class="planet"></div>
+  <div class="orbit o1"></div>
+  <div class="orbit o2"></div>
+
+  <div class="container">
+    <a href="../projects.html">← Back to Projects</a>
+    <div class="section">
+      <h1>Spatial Database Course — Cairo Festival (Final Project)</h1>
+      <p class="muted">Exercise 13: Database backend for a WebGIS — By Sahar Mohamed — Student ID: 12413882</p>
+
+      <h2>Objectives</h2>
+      <p>Create a spatial database backend to organize festival information (venues, booths, events, facilities) supporting proximity queries and dynamically serving a mobile/web app.</p>
+
+      <h2>Context</h2>
+      <p>I created a database for the <strong>Cairo Festival Clothing Show</strong>. The festival includes runway shows, exhibition booths, food courts, toilets, and visitor navigation. The DB supports queries such as nearest facilities, events at a given time, and vendor listings.</p>
+
+      <h2>Data Modeling — Entities & Attributes</h2>
+      <ul>
+        <li><strong>Festival2</strong>: festival_id (PK), name, start_date, end_date, location (geometry)</li>
+        <li><strong>Venue2</strong>: venue_id (PK), festival_id (FK), name, type ('Runway','Exhibit','VIP','Food'), location (geometry)</li>
+        <li><strong>Booth2</strong>: booth_id (PK), venue_id (FK), vendor_name, collection_type, location (polygon)</li>
+        <li><strong>Vendor2</strong>: vendor_id (PK), name, collection_type</li>
+        <li><strong>Event2</strong>: event_id (PK), festival_id (FK), venue_id (FK), name, start_time, end_time, type</li>
+        <li><strong>Facility2</strong>: facility_id (PK), venue_id (FK), type('Toilets','Garbage','Parking'), location (point)</li>
+        <li><strong>Visitor2</strong>: visitor_id (PK), name, phone, current_location (point), ticket_type</li>
+        <li><strong>Ticket2</strong>: ticket_id (PK), ticket_type, price</li>
+        <li><strong>Staff2</strong>: staff_id (PK), name, age, role, venue_id (FK)</li>
+      </ul>
+
+      <h2>Relationships & Use Cases</h2>
+      <p>Design supports:</p>
+      <ul>
+        <li>Proximity queries: find nearest toilets, food, booths to a visitor location</li>
+        <li>Event queries: list events at a venue or at a specific time</li>
+        <li>Vendor listings and vendor-booth linkage</li>
+      </ul>
+
+      <h2>Physical & Implementation Notes</h2>
+      <p>Implemented in PostgreSQL + PostGIS with spatial indexes, geometry types for points/polygons, and test queries demonstrating nearest-feature, event filtering by time, and vendor lookups. The logical model was translated to a physical schema (tables DDL), indexes, and sample dummy inserts for demonstration.</p>
+
+      <h2>Sample Queries (examples)</h2>
+      <ol>
+        <li>Nearest clothing booth to visitor: use `ST_Distance` with `ORDER BY` and `LIMIT 1`.</li>
+        <li>List fashion shows on a given date/time: `SELECT * FROM event2 WHERE start_time &lt;= ...`</li>
+        <li>Find vendors selling 'Luxury' items: `SELECT ... FROM vendor2 JOIN booth2 ...`</li>
+        <li>Find available facilities near the visitor: spatial join with `ST_DWithin`.</li>
+      </ol>
+
+      <p style="margin-top:12px">
+        <a class="btn btn-primary" href="../files/projects/cairo_festival_spatialdb.zip">Download DB export & ER diagram</a>
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

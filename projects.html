@@ -1,52 +1,81 @@
 <!doctype html>
-<html lang='en'>
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Projects — Sahar Mohammed</title>
-    <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Sahar Mohamed</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-<div class="space-scene">
-  <a href="/index.html">← Home</a>
-  <div class="section">
-    <h2>Projects</h2>
-    <p>For each project, include: goal, your role, tools, outcome, and a link to code or demo.</p>
+<div class="space-scene" aria-hidden="false">
+  <div class="scene-decor" aria-hidden="true"></div>
+  <div class="planet" aria-hidden="true"></div>
+  <div class="orbit o1" aria-hidden="true"></div>
+  <div class="orbit o2" aria-hidden="true"></div>
 
-    <div style="margin-top:12px">
-      <h3>Object Detection on SPOT Satellite Images</h3>
-      <p><strong>Role:</strong> Research & Implementation</p>
-      <p><strong>Tools:</strong> Python, Keras, QGIS, SPOT imagery</p>
-      <p><strong>Summary:</strong> Built a CNN-based pipeline to detect specific land features in SPOT images. Improved precision by tuning augmentation and class balancing.</p>
-      <p><strong>Code / Demo:</strong> <em>link to GitHub repository</em></p>
+  <div class="container">
+    <header class="header" role="banner">
+      <img src="assets/images/profile.png" alt="Profile photo" />
+      <div>
+        <h1>Projects</h1>
+        <div style="color:var(--muted)">Selected technical projects, course work, and demos.</div>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="volunteering.html">Volunteering</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <a href="index.html" style="display:inline-block;margin:12px 0">← Home</a>
+
+    <div class="section" role="main" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <p class="muted">For each project I list goal, role, tools, outcome and links to code or demos when available.</p>
+
+      <div style="margin-top:14px">
+
+        <div class="project-card" style="margin-bottom:14px">
+          <h3>Object Detection on SPOT Satellite Images</h3>
+          <p class="muted"><strong>Role:</strong> Research & Implementation</p>
+          <p><strong>Tools:</strong> Python · Keras · QGIS · SPOT</p>
+          <p><strong>Summary:</strong> CNN-based detection pipeline with augmentation and class balancing to improve precision.</p>
+          <p><strong>Code / Demo:</strong> <a class="btn btn-ghost" href="https://github.com/your-username/spot-object-detection" target="_blank" rel="noopener">GitHub repo</a></p>
+        </div>
+
+        <div class="section" aria-labelledby="detailed-pages">
+          <h3 id="detailed-pages">Projects (detailed pages)</h3>
+          <ul>
+            <li><a href="projects/geounitrain-storymap.html">GeoUniTrain — StoryMap</a></li>
+            <li><a href="projects/obia-final-project.html">OBIA — Coastal Habitat Mapping</a></li>
+            <li><a href="projects/cairo-festival-spatialdb.html">Cairo Festival — Spatial DB</a></li>
+            <li><a href="projects/radar-project.html">Radar Project — SAR processing</a></li>
+            <li><a href="projects/rule-based-classification.html">Rule-based Classification</a></li>
+            <li><a href="projects/fire-gee-eobrowser.html">Fire Applications — GEE & EO Browser</a></li>
+            <li><a href="projects/practice-sw-projects.html">Practice SW — GitHub Projects</a></li>
+            <li><a href="projects/bip-drones-romania.html">BIP Romania — Drones for Env. Sciences</a></li>
+            <li><a href="projects/obia-building-height-shadow.html">OBIA — Building Height from Shadows</a></li>
+            <li><a href="projects/internship-tomosar.html">Internship — TomoSAR</a></li>
+            <li><a href="projects/hierarchical-composite-obia.html">Hierarchical Composite Class Modelling</a></li>
+          </ul>
+        </div>
+
+        <hr style="margin:18px 0; border-color: rgba(255,255,255,0.04)">
+
+        <div class="project-card" style="margin-bottom:14px">
+          <h3>Yield Forecasting — Larvest</h3>
+          <p class="muted"><strong>Role:</strong> CTO / Lead ML Engineer</p>
+          <p><strong>Tools:</strong> AWS · Python · Remote Sensing</p>
+          <p><strong>Summary:</strong> Developed time-series & remote-sensing driven models for potato yield forecasting and production insights.</p>
+          <p><a class="btn btn-ghost" href="https://github.com/SaharAbdulallim" target="_blank" rel="noopener">View GitHub projects</a></p>
+        </div>
+
+      </div>
     </div>
 
-<div class="section">
-  <h3>Projects (detailed pages)</h3>
-  <ul>
-    <li><a href="/projects/geounitrain-storymap.html">GeoUniTrain — StoryMap</a></li>
-    <li><a href="/projects/obia-final-project.html">OBIA — Coastal Habitat Mapping</a></li>
-    <li><a href="/projects/cairo-festival-spatialdb.html">Cairo Festival — Spatial DB</a></li>
-    <li><a href="/projects/radar-project.html">Radar Project — SAR processing</a></li>
-    <li><a href="/projects/rule-based-classification.html">Rule-based Classification</a></li>
-    <li><a href="/projects/fire-gee-eobrowser.html">Fire Applications — GEE & EO Browser</a></li>
-    <li><a href="/projects/practice-sw-projects.html">Practice SW — GitHub Projects</a></li>
-    <li><a href="/projects/bip-drones-romania.html">BIP Romania — Drones for Env. Sciences</a></li>
-    <li><a href="/projects/obia-building-height-shadow.html">OBIA — Building Height from Shadows</a></li>
-    <li><a href="/projects/internship-tomosar.html">Internship — TomoSAR</a></li>
-    <li><a href="/projects/hierarchical-composite-obia.html">Hierarchical Composite Class Modelling</a></li>
-  </ul>
-</div>
-
-    <hr/>
-
-    <div style="margin-top:12px">
-      <h4>Yield Forecasting — Larvest</h4>
-      <p><strong>Role:</strong> CTO / Lead ML Engineer</p>
-      <p><strong>Tools:</strong> AWS, Python, Remote Sensing, Time-series models</p>
-      <p><strong>Summary:</strong> Developed models for potato yield forecasting, integrating satellite-derived indices and ground-truth data.</p>
-    </div>
   </div>
 </div>
 

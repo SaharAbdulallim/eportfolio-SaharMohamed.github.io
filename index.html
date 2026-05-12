@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sahar Mohamed — Earth Observation & Geoinformatics </title>
+<title>Sahar Mohamed — Earth Observation & AI Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -482,8 +482,59 @@
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+  .track-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .track-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .track-icon {
+    font-size: 1.1rem;
+  }
+
+  .track-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cloud-white);
+  }
+
+  .track-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    opacity: 0.6;
+    margin-left: auto;
+    letter-spacing: 0.08em;
+  }
+
+  .track-pill {
+    font-size: 0.7rem;
+    font-family: 'Space Mono', monospace;
+    padding: 0.18rem 0.65rem;
+    border-radius: 100px;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .pill-cyan { background: rgba(0,212,255,0.08); color: var(--signal-cyan); border: 1px solid rgba(0,212,255,0.2); }
+  .pill-green { background: rgba(0,255,157,0.08); color: var(--sat-green); border: 1px solid rgba(0,255,157,0.2); }
+  .pill-amber { background: rgba(255,140,0,0.08); color: var(--fire-amber); border: 1px solid rgba(255,140,0,0.2); }
+  .pill-purple { background: rgba(160,100,255,0.08); color: #c084fc; border: 1px solid rgba(160,100,255,0.2); }
+
+  @media (max-width: 720px) {
+    .projects-grid { grid-template-columns: 1fr; }
   }
 
   .project-card {
@@ -1000,216 +1051,335 @@
       <h2 class="section-title">Projects</h2>
     </div>
 
-    <div class="projects-grid">
-
-      <!-- FEATURED -->
-      <div class="project-card featured reveal">
-        <div class="featured-visual">
-          <svg viewBox="0 0 200 200" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="earthg" cx="40%" cy="40%">
-                <stop offset="0%" stop-color="#1a4a6e"/>
-                <stop offset="60%" stop-color="#0a2a44"/>
-                <stop offset="100%" stop-color="#030a14"/>
-              </radialGradient>
-            </defs>
-            <circle cx="100" cy="100" r="85" fill="url(#earthg)" opacity="0.9"/>
-            <ellipse cx="75" cy="80" rx="22" ry="14" fill="#1d6b3a" opacity="0.7"/>
-            <ellipse cx="120" cy="70" rx="30" ry="18" fill="#1d5a8a" opacity="0.5"/>
-            <ellipse cx="100" cy="115" rx="25" ry="12" fill="#1a3d8a" opacity="0.6"/>
-            <ellipse cx="55" cy="105" rx="18" ry="10" fill="#2a7a4a" opacity="0.6"/>
-            <!-- Fire zones -->
-            <circle cx="85" cy="75" r="4" fill="#ff4400" opacity="0.85">
-              <animate attributeName="r" values="3;5;3" dur="1.5s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0.85;0.4;0.85" dur="1.5s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="110" cy="90" r="3" fill="#ff6600" opacity="0.75">
-              <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="68" cy="95" r="3.5" fill="#ff3300" opacity="0.8">
-              <animate attributeName="r" values="2.5;4.5;2.5" dur="1.8s" repeatCount="indefinite"/>
-            </circle>
-            <!-- Orbit line -->
-            <ellipse cx="100" cy="100" rx="95" ry="25" fill="none" stroke="rgba(0,212,255,0.25)" stroke-width="0.8" stroke-dasharray="4,3"/>
-            <!-- Satellite dot -->
-            <circle cx="195" cy="100" r="3.5" fill="#00d4ff">
-              <animateMotion dur="4s" repeatCount="indefinite">
-                <mpath href="#satpath"/>
-              </animateMotion>
-            </circle>
-            <path id="satpath" d="M 5,100 A 95,25 0 0,1 195,100 A 95,25 0 0,1 5,100" fill="none"/>
-            <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(0,212,255,0.12)" stroke-width="1"/>
-          </svg>
-        </div>
-        <div style="flex:1; padding: 2rem;">
-          <span class="featured-label">● Current Master Thesis</span>
-          <div class="project-name" style="font-size:1.2rem; margin-bottom:0.5rem;">Burnt Area Detection for CEMS</div>
-          <div class="tl-org" style="margin-bottom:1rem;">iCube-SERTIT × IRISA/OBELIX — Strasbourg & Vannes</div>
-          <p class="project-desc" style="max-width:500px;">Multi-task semantic segmentation pipeline for operational wildfire mapping from VHR SPOT imagery, integrated with the Copernicus Emergency Management Service. Uses UNet-ResNet34 with TTA, Mixed Precision, and Docker packaging for rapid deployment.</p>
-          <div class="project-tags">
-            <span class="ptag">PyTorch Lightning</span>
-            <span class="ptag">UNet-RN34</span>
-            <span class="ptag">SPOT VHR</span>
-            <span class="ptag">Semantic Segmentation</span>
-            <span class="ptag">Docker</span>
-            <span class="ptag">CEMS</span>
+    <!-- ── TRACK 0: MASTER THESIS ── -->
+    <div class="track-section">
+      <div class="track-header">
+        <span class="track-icon">🔥</span>
+        <span class="track-title">Master Thesis</span>
+        <span class="track-pill pill-green">● In Progress · 2026</span>
+        <span class="track-sub">iCube-SERTIT × IRISA/OBELIX — Strasbourg & Vannes</span>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card featured reveal" style="grid-column:1/-1; flex-direction:row;">
+          <div class="featured-visual">
+            <svg viewBox="0 0 200 200" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="earthg" cx="40%" cy="40%">
+                  <stop offset="0%" stop-color="#1a4a6e"/>
+                  <stop offset="60%" stop-color="#0a2a44"/>
+                  <stop offset="100%" stop-color="#030a14"/>
+                </radialGradient>
+              </defs>
+              <circle cx="100" cy="100" r="85" fill="url(#earthg)" opacity="0.9"/>
+              <ellipse cx="75" cy="80" rx="22" ry="14" fill="#1d6b3a" opacity="0.7"/>
+              <ellipse cx="120" cy="70" rx="30" ry="18" fill="#1d5a8a" opacity="0.5"/>
+              <ellipse cx="100" cy="115" rx="25" ry="12" fill="#1a3d8a" opacity="0.6"/>
+              <ellipse cx="55" cy="105" rx="18" ry="10" fill="#2a7a4a" opacity="0.6"/>
+              <circle cx="85" cy="75" r="4" fill="#ff4400" opacity="0.85"><animate attributeName="r" values="3;5;3" dur="1.5s" repeatCount="indefinite"/></circle>
+              <circle cx="110" cy="90" r="3" fill="#ff6600" opacity="0.75"><animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/></circle>
+              <circle cx="68" cy="95" r="3.5" fill="#ff3300" opacity="0.8"><animate attributeName="r" values="2.5;4.5;2.5" dur="1.8s" repeatCount="indefinite"/></circle>
+              <ellipse cx="100" cy="100" rx="95" ry="25" fill="none" stroke="rgba(0,212,255,0.25)" stroke-width="0.8" stroke-dasharray="4,3"/>
+              <circle cx="195" cy="100" r="3.5" fill="#00d4ff"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#satpath"/></animateMotion></circle>
+              <path id="satpath" d="M 5,100 A 95,25 0 0,1 195,100 A 95,25 0 0,1 5,100" fill="none"/>
+              <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(0,212,255,0.12)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div style="flex:1; padding:2rem;">
+            <span class="featured-label">● Current Master Thesis</span>
+            <div class="project-name" style="font-size:1.2rem; margin-bottom:0.5rem;">Burnt Area Detection for CEMS</div>
+            <div class="tl-org" style="margin-bottom:1rem;">iCube-SERTIT × IRISA/OBELIX — Strasbourg & Vannes</div>
+            <p class="project-desc" style="max-width:500px;">Multi-task semantic segmentation pipeline for operational wildfire mapping from VHR SPOT imagery, integrated with the Copernicus Emergency Management Service. Uses UNet-ResNet34 with TTA, Mixed Precision, and Docker packaging for rapid deployment by mapping operators.</p>
+            <div class="project-tags">
+              <span class="ptag">PyTorch Lightning</span><span class="ptag">UNet-RN34</span><span class="ptag">SPOT VHR</span><span class="ptag">Semantic Segmentation</span><span class="ptag">Docker</span><span class="ptag">CEMS</span>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- TOMOSAR -->
-      <a href="https://github.com/SaharAbdulallim/Deep-Learning-in-TomoSAR" target="_blank" class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-tree">🌲</div>
-          <div class="project-links">
-            <span class="project-link">GitHub ↗</span>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-name">TomoSAR Forest Height Estimation</div>
-          <p class="project-desc">Implemented TSNN from research paper and developed Modified UNet (M-UNet) for estimating canopy and ground height from Tomographic SAR data. Part of Salzburg internship under Dr. Karima Hadj-Rabah.</p>
-          <div class="project-tags">
-            <span class="ptag">TomoSAR</span>
-            <span class="ptag">UNet</span>
-            <span class="ptag">Forest Height</span>
-            <span class="ptag">PyTorch</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- FLOOD GEE -->
-      <a href="https://temporal-ring-371012.projects.earthengine.app/view/detecting-flood-in-western-norway-in-november-2024" target="_blank" class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-flood">🌊</div>
-          <div class="project-links">
-            <span class="project-link">Live App ↗</span>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-name">Flood Detection — Western Norway</div>
-          <p class="project-desc">Earth Engine application for flood monitoring in Norway (November 2024). Built interactive GEE app with real-time flood extent mapping using SAR-based change detection.</p>
-          <div class="project-tags">
-            <span class="ptag">Google Earth Engine</span>
-            <span class="ptag">SAR</span>
-            <span class="ptag">Flood Mapping</span>
-            <span class="ptag">JavaScript</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- BIG DATA -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-cloud">⚡</div>
-        </div>
-        <div class="project-body">
-          <div class="project-name">Big Data EO — Cloud Scalability</div>
-          <p class="project-desc">Architected scalable workflows using AWS EMR and Apache Spark for FRACTAL datasets. Distributed TensorFlow training across multiple GPUs with BigEarthNet (Sentinel-1/2 + LULC). Used Petastorm for efficient data sharding.</p>
-          <div class="project-tags">
-            <span class="ptag">AWS EMR</span>
-            <span class="ptag">Apache Spark</span>
-            <span class="ptag">Petastorm</span>
-            <span class="ptag">TensorFlow</span>
-            <span class="ptag">BigEarthNet</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- COCONUT YOLO -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-plant">🥥</div>
-        </div>
-        <div class="project-body">
-          <div class="project-name">Coconut Tree Change Detection</div>
-          <p class="project-desc">Advanced Computer Vision coursework: change detection of coconut trees using various YOLO models. Also implemented glacier segmentation with TorchGeo and experimented with DINOv2 foundation models and generative AI.</p>
-          <div class="project-tags">
-            <span class="ptag">YOLO</span>
-            <span class="ptag">TorchGeo</span>
-            <span class="ptag">DINOv2</span>
-            <span class="ptag">Change Detection</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- OIL DETECTION -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-oil">🛢️</div>
-          <div class="project-links">
-            <span class="project-link">GitHub ↗</span>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-name">Oil Storage Detection — YOLOv5 + SAM</div>
-          <p class="project-desc">Detecting oil storage tanks from Google Earth imagery using YOLOv5, then converting bounding boxes to instance segmentation using the Segment Anything Model (SAM). Automated labeling pipeline with RoboFlow.</p>
-          <div class="project-tags">
-            <span class="ptag">YOLOv5</span>
-            <span class="ptag">SAM</span>
-            <span class="ptag">Instance Segmentation</span>
-            <span class="ptag">RoboFlow</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- PLANT SPECIES -->
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-plant">🌿</div>
-        </div>
-        <div class="project-body">
-          <div class="project-name">Plant Species Classification — France</div>
-          <p class="project-desc">Machine learning for Earth Observation: classifying plant species across France by training Random Forest, SVM, and Gradient Boosting models on multi-spectral imagery.</p>
-          <div class="project-tags">
-            <span class="ptag">Random Forest</span>
-            <span class="ptag">SVM</span>
-            <span class="ptag">Gradient Boosting</span>
-            <span class="ptag">EO</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- DRONE BIP -->
-      <a href="https://storymaps.arcgis.com/stories/0bbfd0c4da634da2ade8cc8fe56e825b" target="_blank" class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-drone">🚁</div>
-          <div class="project-links">
-            <span class="project-link">StoryMap ↗</span>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-name">BIP Romania — Drones for Environmental Science</div>
-          <p class="project-desc">International field school: drone orthomosaics, vegetation indices (NDVI/NDWI), and ArcGIS StoryMap report on environmental monitoring in Romania.</p>
-          <div class="project-tags">
-            <span class="ptag">Drones / UAV</span>
-            <span class="ptag">Orthomosaics</span>
-            <span class="ptag">NDVI</span>
-            <span class="ptag">ArcGIS</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- VIRTUGHAN -->
-      <a href="https://plugins.qgis.org/plugins/virtughan_qgis/#plugin-details" target="_blank" class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon icon-glacier">🔌</div>
-          <div class="project-links">
-            <span class="project-link">QGIS Plugin ↗</span>
-          </div>
-        </div>
-        <div class="project-body">
-          <div class="project-name">VirtuGhan — QGIS Plugin</div>
-          <p class="project-desc">Contributed to building VirtuGhan, a satellite data tools plugin for QGIS. Published on the official QGIS plugin repository — open-source contribution to the geospatial community.</p>
-          <div class="project-tags">
-            <span class="ptag">QGIS</span>
-            <span class="ptag">Python</span>
-            <span class="ptag">Open Source</span>
-            <span class="ptag">Satellite Tools</span>
-          </div>
-        </div>
-      </a>
-
     </div>
+
+    <!-- ── TRACK 1: GEO DATA SCIENCE — France (UBS Vannes, Sep 2025 →) ── -->
+    <div class="track-section">
+      <div class="track-header">
+        <span class="track-icon">🛰️</span>
+        <span class="track-title">Geo Data Science Specialisation</span>
+        <span class="track-pill pill-cyan">UBS Vannes, France · 2025–2026</span>
+        <span class="track-sub">University of South Brittany</span>
+      </div>
+      <div class="projects-grid">
+
+        <!-- DL4GAM / CV Class -->
+        <a href="https://github.com/SaharAbdulallim/DL4GAM_CV-Class" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-plant">🥥</div>
+            <div class="project-links"><span class="project-link">GitHub ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Deep Learning for Geospatial Analysis & Mapping</div>
+            <p class="project-desc">Computer Vision course projects: coconut tree change detection with YOLO, glacier segmentation with TorchGeo, and experiments with foundation models (DINOv2) and generative AI on geospatial imagery.</p>
+            <div class="project-tags"><span class="ptag">YOLO</span><span class="ptag">TorchGeo</span><span class="ptag">DINOv2</span><span class="ptag">Change Detection</span><span class="ptag">PyTorch</span></div>
+          </div>
+        </a>
+
+        <!-- Efficient RS Image Processing -->
+        <a href="https://github.com/SaharAbdulallim/Efficient-Remote-Sensing-Image-Processing" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-cloud">⚡</div>
+            <div class="project-links"><span class="project-link">GitHub ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Efficient Remote Sensing Image Processing</div>
+            <p class="project-desc">Course projects covering advanced optimisations and streamlined pipelines for large-scale spatial data: quantisation, compression, tiling strategies, and efficient inference workflows for satellite imagery.</p>
+            <div class="project-tags"><span class="ptag">Image Processing</span><span class="ptag">Optimisation</span><span class="ptag">Remote Sensing</span><span class="ptag">Python</span></div>
+          </div>
+        </a>
+
+        <!-- Big Data EO -->
+        <div class="project-card reveal">
+          <div class="project-header"><div class="project-icon icon-cloud">☁️</div></div>
+          <div class="project-body">
+            <div class="project-name">Big Data EO — Cloud Scalability</div>
+            <p class="project-desc">Scalable workflows using AWS EMR and Apache Spark for FRACTAL datasets. Distributed TensorFlow training across multiple GPUs with BigEarthNet (Sentinel-1/2 + LULC). Petastorm for efficient data sharding.</p>
+            <div class="project-tags"><span class="ptag">AWS EMR</span><span class="ptag">Apache Spark</span><span class="ptag">Petastorm</span><span class="ptag">TensorFlow</span><span class="ptag">BigEarthNet</span></div>
+          </div>
+        </div>
+
+        <!-- Plant Species ML -->
+        <div class="project-card reveal">
+          <div class="project-header"><div class="project-icon icon-plant">🌿</div></div>
+          <div class="project-body">
+            <div class="project-name">Plant Species Classification — France</div>
+            <p class="project-desc">ML for Earth Observation course: classifying plant species across France by training and evaluating Random Forest, SVM, and Gradient Boosting models on multi-spectral satellite imagery.</p>
+            <div class="project-tags"><span class="ptag">Random Forest</span><span class="ptag">SVM</span><span class="ptag">Gradient Boosting</span><span class="ptag">EO</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── TRACK 2: GEOINFORMATICS — Salzburg, Austria (2024–2025) ── -->
+    <div class="track-section">
+      <div class="track-header">
+        <span class="track-icon">🏔️</span>
+        <span class="track-title">Geoinformatics Specialisation</span>
+        <span class="track-pill pill-amber">Paris-Lodron University Salzburg · 2024–2025</span>
+        <span class="track-sub">Austria</span>
+      </div>
+      <div class="projects-grid">
+
+        <!-- TomoSAR internship -->
+        <a href="https://github.com/SaharAbdulallim/Deep-Learning-in-TomoSAR" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-tree">🌲</div>
+            <div class="project-links"><span class="project-link">GitHub ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">TomoSAR Forest Height Estimation</div>
+            <p class="project-desc">Internship: implemented TSNN from paper and developed Modified UNet (M-UNet) for canopy & ground height estimation from Tomographic SAR (TropiSAR) data. Benchmarked against CAPON and MUSIC spectral methods.</p>
+            <div class="project-tags"><span class="ptag">TomoSAR</span><span class="ptag">UNet</span><span class="ptag">TSNN</span><span class="ptag">Forest Height</span><span class="ptag">PyTorch</span></div>
+          </div>
+        </a>
+
+        <!-- VirtuGhan -->
+        <a href="https://plugins.qgis.org/plugins/virtughan_qgis/#plugin-details" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-glacier">🔌</div>
+            <div class="project-links"><span class="project-link">QGIS Plugin ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">VirtuGhan — QGIS Plugin</div>
+            <p class="project-desc">Contributed to building VirtuGhan, a satellite data tools plugin for QGIS. Published on the official QGIS plugin repository — open-source contribution to the geospatial community.</p>
+            <div class="project-tags"><span class="ptag">QGIS</span><span class="ptag">Python</span><span class="ptag">Open Source</span><span class="ptag">Satellite Tools</span></div>
+          </div>
+        </a>
+
+        <!-- Flood GEE (Salzburg course) -->
+        <a href="https://temporal-ring-371012.projects.earthengine.app/view/detecting-flood-in-western-norway-in-november-2024" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-flood">🌊</div>
+            <div class="project-links"><span class="project-link">Live App ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Flood Detection — Western Norway</div>
+            <p class="project-desc">Google Earth Engine app for flood monitoring in Norway (November 2024). SAR-based change detection with interactive real-time flood extent mapping.</p>
+            <div class="project-tags"><span class="ptag">Google Earth Engine</span><span class="ptag">SAR</span><span class="ptag">Flood Mapping</span><span class="ptag">JavaScript</span></div>
+          </div>
+        </a>
+
+        <!-- Cairo Festival DB (Salzburg course) -->
+        <a href="https://github.com/SaharAbdulallim/cairo-festival-spatialdb" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-cloud">🗄️</div>
+            <div class="project-links"><span class="project-link">GitHub ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Cairo Festival — Spatial Database</div>
+            <p class="project-desc">PostgreSQL + PostGIS spatial database backend for a festival WebGIS. Full schema for venues, booths, events, and facilities with proximity queries, spatial indexes, and a complete ER diagram.</p>
+            <div class="project-tags"><span class="ptag">PostgreSQL</span><span class="ptag">PostGIS</span><span class="ptag">WebGIS</span><span class="ptag">Spatial DB</span></div>
+          </div>
+        </a>
+
+        <!-- GeoHumanitarian (Salzburg course) -->
+        <a href="https://storymaps.arcgis.com/stories/84adcfaf4488428da3f749bb1679ad37" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-drone">🌍</div>
+            <div class="project-links"><span class="project-link">StoryMap ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">GeoHumanitarian Action — Spatial Analysis</div>
+            <p class="project-desc">Spatial analysis and Earth Observation applied to humanitarian crisis contexts. Combines remote sensing with crisis response decision-making, published as an interactive ArcGIS StoryMap.</p>
+            <div class="project-tags"><span class="ptag">GeoHumanitarian</span><span class="ptag">ArcGIS StoryMap</span><span class="ptag">Crisis Mapping</span><span class="ptag">EO</span></div>
+          </div>
+        </a>
+
+        <!-- Spatial Thinking StoryMap (Salzburg course) -->
+        <a href="https://storymaps.arcgis.com/stories/a421563d625c4ad386b7f1962be37667" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-glacier">🧭</div>
+            <div class="project-links"><span class="project-link">StoryMap ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Spatial Thinking & Modelling</div>
+            <p class="project-desc">Group StoryMap combining narrative, spatial analysis, and interactive visualisations to communicate complex geographic phenomena and modelling outcomes.</p>
+            <div class="project-tags"><span class="ptag">ArcGIS StoryMap</span><span class="ptag">Spatial Analysis</span><span class="ptag">Geovisualization</span></div>
+          </div>
+        </a>
+
+        <!-- OBIA -->
+        <a href="https://saharabdulallim.github.io/eportfolio-SaharMohamed.github.io/projects/obia-final-project.html" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-flood">🗺️</div>
+            <div class="project-links"><span class="project-link">Project Page ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">OBIA — Coastal Habitat Mapping</div>
+            <p class="project-desc">Object-Based Image Analysis pipeline for coastal habitat classification using SPOT imagery. Full workflow: segmentation, feature extraction, pixel-based SVM classification, and rule-based classification.</p>
+            <div class="project-tags"><span class="ptag">OBIA</span><span class="ptag">SPOT</span><span class="ptag">SVM</span><span class="ptag">Segmentation</span><span class="ptag">Land Cover</span></div>
+          </div>
+        </a>
+
+        <!-- Radar / SAR Taal Volcano -->
+        <a href="https://saharabdulallim.github.io/eportfolio-SaharMohamed.github.io/projects/radar-project.html" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-oil">🌋</div>
+            <div class="project-links"><span class="project-link">Project Page ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">SAR Displacement Map — Taal Volcano</div>
+            <p class="project-desc">InSAR-based ground deformation mapping for the Taal Volcano eruption (Philippines, Jan 2020). Full pipeline: co-registration, interferogram, topographic removal, phase unwrapping with SNAPHU, terrain-corrected GeoTIFF export.</p>
+            <div class="project-tags"><span class="ptag">InSAR</span><span class="ptag">SAR</span><span class="ptag">SNAPHU</span><span class="ptag">SNAP</span><span class="ptag">Displacement Mapping</span></div>
+          </div>
+        </a>
+
+        <!-- EO Application Dev -->
+        <a href="https://github.com/SaharAbdulallim/IP_Application-Development-Earth-Observation-" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-tree">🏙️</div>
+            <div class="project-links"><span class="project-link">GitHub ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">EO Application Development — Building Heights</div>
+            <p class="project-desc">Final application development project: OBIA-based pipeline for building height estimation from Earth Observation imagery. Full code and demo in repository.</p>
+            <div class="project-tags"><span class="ptag">OBIA</span><span class="ptag">Building Heights</span><span class="ptag">Earth Observation</span><span class="ptag">Python</span></div>
+          </div>
+        </a>
+
+        <a href="https://saharabdulallim.github.io/eportfolio-SaharMohamed.github.io/projects/obia-final-project.html" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-flood">🗺️</div>
+            <div class="project-links"><span class="project-link">Project Page ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">OBIA — Coastal Habitat Mapping</div>
+            <p class="project-desc">Object-Based Image Analysis pipeline for coastal habitat classification using SPOT imagery. Full workflow: segmentation, feature extraction, pixel-based SVM classification from random samples, and rule-based classification.</p>
+            <div class="project-tags"><span class="ptag">OBIA</span><span class="ptag">SPOT</span><span class="ptag">SVM</span><span class="ptag">Segmentation</span><span class="ptag">Land Cover</span></div>
+          </div>
+        </a>
+
+        <a href="https://saharabdulallim.github.io/eportfolio-SaharMohamed.github.io/projects/radar-project.html" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-oil">🌋</div>
+            <div class="project-links"><span class="project-link">Project Page ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">SAR Displacement Map — Taal Volcano</div>
+            <p class="project-desc">InSAR-based ground deformation mapping for the Taal Volcano eruption (Philippines, Jan 2020). Full pipeline: co-registration, interferogram, topographic removal, phase unwrapping with SNAPHU, terrain-corrected GeoTIFF export.</p>
+            <div class="project-tags"><span class="ptag">InSAR</span><span class="ptag">SAR</span><span class="ptag">SNAPHU</span><span class="ptag">SNAP</span><span class="ptag">Displacement Mapping</span></div>
+          </div>
+        </a>
+
+        <a href="https://github.com/SaharAbdulallim/cairo-festival-spatialdb" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-cloud">🗄️</div>
+            <div class="project-links"><span class="project-link">GitHub ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Cairo Festival — Spatial Database</div>
+            <p class="project-desc">PostgreSQL + PostGIS spatial database backend for a festival WebGIS. Schema for venues, booths, events, and facilities with proximity queries, spatial indexes, and a full ER diagram.</p>
+            <div class="project-tags"><span class="ptag">PostgreSQL</span><span class="ptag">PostGIS</span><span class="ptag">WebGIS</span><span class="ptag">Spatial DB</span></div>
+          </div>
+        </a>
+
+        <a href="https://storymaps.arcgis.com/stories/0bbfd0c4da634da2ade8cc8fe56e825b" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-drone">🚁</div>
+            <div class="project-links"><span class="project-link">StoryMap ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">BIP Romania — Drones for Environmental Science</div>
+            <p class="project-desc">International field school in Romania: drone orthomosaics, vegetation indices (NDVI/NDWI), and ArcGIS StoryMap report on environmental monitoring.</p>
+            <div class="project-tags"><span class="ptag">Drones / UAV</span><span class="ptag">Orthomosaics</span><span class="ptag">NDVI</span><span class="ptag">ArcGIS</span></div>
+          </div>
+        </a>
+
+        <a href="https://github.com/SaharAbdulallim/PLUS_softwaredev_2025_Sahar" target="_blank" class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-plant">🛠️</div>
+            <div class="project-links"><span class="project-link">GitHub ↗</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Software Development — QGIS Plugins & Tools</div>
+            <p class="project-desc">Semester software development projects: QGIS plugins, geospatial analysis tools, and EO utility scripts including the VirtuGhan analysis plugin.</p>
+            <div class="project-tags"><span class="ptag">QGIS Plugin</span><span class="ptag">Python</span><span class="ptag">Software Dev</span><span class="ptag">EO Tools</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ── TRACK 3: BACHELOR PROJECTS — Beni Suef University ── -->
+    <div class="track-section">
+      <div class="track-header">
+        <span class="track-icon">🎓</span>
+        <span class="track-title">Bachelor Projects & Independent Study</span>
+        <span class="track-pill pill-purple">Beni Suef University · 2018–2023</span>
+        <span class="track-sub">Egypt</span>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon icon-oil">🛢️</div>
+          </div>
+          <div class="project-body">
+            <div class="project-name">Oil Storage Detection — YOLOv5 + SAM</div>
+            <p class="project-desc">Graduation project: detecting oil storage tanks from Google Earth imagery using YOLOv5, converting bounding boxes to instance segmentation with the Segment Anything Model (SAM). Automated labeling pipeline with RoboFlow.</p>
+            <div class="project-tags"><span class="ptag">YOLOv5</span><span class="ptag">SAM</span><span class="ptag">Instance Segmentation</span><span class="ptag">RoboFlow</span><span class="ptag">Graduation Project</span></div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="border-color:rgba(160,100,255,0.15);">
+          <div class="project-header"><div class="project-icon icon-glacier">🌱</div></div>
+          <div class="project-body">
+            <div style="font-size:0.68rem; font-family:'Space Mono',monospace; color:#c084fc; opacity:0.8; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">Self-Directed Learning</div>
+            <div class="project-name">Esri MOOC — GIS for Climate Action</div>
+            <p class="project-desc">Independent online course: optimal routing for GHG emission reduction, ML-based maize cultivation forecasting, sea level rise monitoring, and heat wave exposure visualization. Taken independently outside of any academic programme.</p>
+            <div class="project-tags"><span class="ptag">ArcGIS</span><span class="ptag">GIS</span><span class="ptag">Climate Action</span><span class="ptag">Machine Learning</span><span class="ptag">Self-Directed</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1253,7 +1423,7 @@
     </div>
 
     <div style="margin-top:3rem;" class="reveal">
-      <p style="font-size:0.75rem; font-family:'Space Mono',monospace; color:var(--signal-cyan); letter-spacing:0.12em; text-transform:uppercase; opacity:0.6; margin-bottom:1.5rem;">Volunteering & Awards</p>
+      <p style="font-size:0.75rem; font-family:'Space Mono',monospace; color:var(--signal-cyan); letter-spacing:0.12em; text-transform:uppercase; opacity:0.6; margin-bottom:1.5rem;">Volunteering</p>
       <div style="display:flex; flex-wrap:wrap; gap:1rem;">
         <div style="padding:1rem 1.5rem; border:1px solid var(--border); border-radius:6px; font-size:0.85rem; color:var(--muted);">
           🛰️ <strong style="color:var(--cloud-white);">ESA Living Planet Symposium 2025</strong> — Volunteer, Vienna
@@ -1263,9 +1433,6 @@
         </div>
         <div style="padding:1rem 1.5rem; border:1px solid var(--border); border-radius:6px; font-size:0.85rem; color:var(--muted);">
           🌍 <strong style="color:var(--cloud-white);">Spaceak Initiative</strong> — EGSA & Ministry of Youth (Social Media)
-        </div>
-        <div style="padding:1rem 1.5rem; border:1px solid var(--border); border-radius:6px; font-size:0.85rem; color:var(--muted);">
-          🏅 <strong style="color:var(--cloud-white);">Esri MOOC</strong> — GIS for Climate Action
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 /* assets/css/style.css
-   Space / Earth / Tech theme — logos above name (slightly larger), larger profile
+   Space / Earth / Tech theme, logos above name (slightly larger), larger profile
 */
 
 :root{
@@ -83,6 +83,21 @@ body::before{
 
 /* Layout: container + top logos */
 .container{ max-width:var(--maxw); margin:36px auto; padding:22px; position:relative; z-index:2; }
+
+/* Base link colour, plain <a> was falling back to browser default blue,
+   which is unreadable on the dark ground. */
+a{ color:var(--teal); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+.container > a[href^=".."]{
+  display:inline-block;
+  margin-bottom:6px;
+  font-size:14px;
+  letter-spacing:0.04em;
+  color:var(--muted);
+}
+.container > a[href^=".."]:hover{ color:var(--teal); text-decoration:none; }
+.section ul li{ margin-bottom:8px; }
+.section img{ margin-top:6px; }
 
 /* TOP slightly larger logos above name/title */
 .top-logos{

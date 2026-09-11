@@ -687,6 +687,97 @@
     padding: 2rem;
   }
 
+  /* ─── THESIS SHOWCASE ─── */
+  .thesis-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+    margin: 1.4rem 0;
+  }
+
+  .tmetric {
+    background: rgba(0,255,157,0.05);
+    border: 1px solid rgba(0,255,157,0.18);
+    border-radius: 8px;
+    padding: 0.9rem 0.8rem;
+    text-align: center;
+  }
+
+  .tm-num {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--sat-green);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .tm-label {
+    display: block;
+    font-size: 0.68rem;
+    font-family: 'Space Mono', monospace;
+    color: rgba(232,244,248,0.66);
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+  }
+
+  .thesis-sub {
+    font-size: 0.68rem;
+    font-family: 'Space Mono', monospace;
+    color: var(--signal-cyan);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 0.6rem;
+  }
+
+  .ptag.sensor { background: rgba(255,140,0,0.09); border-color: rgba(255,140,0,0.25); color: #ffb74d; }
+  .ptag.model  { background: rgba(0,255,157,0.09); border-color: rgba(0,255,157,0.28); color: var(--sat-green); }
+
+  .findings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .finding {
+    background: rgba(26,42,68,0.55);
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--sat-green);
+    border-radius: 8px;
+    padding: 1.2rem 1.3rem;
+  }
+
+  .finding-n {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.66rem;
+    color: var(--sat-green);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .finding-t {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+  }
+
+  .finding p {
+    font-size: 0.9rem;
+    color: rgba(232,244,248,0.7);
+    line-height: 1.65;
+  }
+
+  .finding.negative { border-left-color: var(--fire-amber); }
+  .finding.negative .finding-n { color: var(--fire-amber); }
+
   /* ─── EDUCATION ─── */
   #education { background: rgba(19,31,52,0.6); }
 
@@ -897,7 +988,7 @@
   <div class="hero-content">
     <div class="hero-badge">
       <span class="dot"></span>
-      Earth Observation &amp; AI Engineer
+      Open to work &middot; Earth Observation &amp; AI
     </div>
 
     <!-- Profile photo -->
@@ -914,8 +1005,9 @@
       Earth Observation Engineer &nbsp;·&nbsp; Deep Learning &nbsp;·&nbsp; Geospatial Foundation Models
     </p>
     <p class="hero-desc">
-      Turning satellite data into insight. I build deep learning pipelines for crisis mapping, 
-      forest height estimation, and semantic segmentation — where space technology meets artificial intelligence.
+      Turning satellite data into insight. I adapt geospatial foundation models for operational crisis
+      mapping — wildfire delineation across ten VHR sensors for Copernicus Emergency Management,
+      forest height from tomographic SAR, and semantic segmentation at scale.
     </p>
     <div class="hero-ctas">
       <a href="mailto:sahaar208@gmail.com" class="btn btn-primary">Get in touch ↗</a>
@@ -954,8 +1046,8 @@
     <span class="stat-label">Mundus Scholar</span>
   </div>
   <div class="stat-item">
-    <span class="stat-num">CEMS</span>
-    <span class="stat-label">Thesis Researcher</span>
+    <span class="stat-num">10</span>
+    <span class="stat-label">VHR Sensors in Thesis</span>
   </div>
 </div>
 
@@ -969,27 +1061,35 @@
     <div class="about-grid reveal">
       <div class="about-text">
         <p>I'm an <strong>Erasmus Mundus scholar</strong> in the Copernicus Master in Digital Earth program, currently based in Strasbourg, France. My work sits at the intersection of satellite remote sensing, deep learning, and operational geospatial systems.</p>
-        <p>My master's thesis at <strong>iCube-SERTIT (Strasbourg University) & IRISA/OBELIX (UBS Vannes)</strong> focuses on developing automated burnt area detection pipelines for the <strong>Copernicus Emergency Management Service (CEMS)</strong> using Very High-Resolution SPOT imagery and multi-task semantic segmentation.</p>
-        <p>Previously I worked on <strong>TomoSAR deep learning</strong> for canopy height estimation, rice paddy detection in Thailand via Sentinel-2, and contributed a <strong>QGIS plugin (VirtuGhan)</strong> to the open-source community. My background combines space navigation engineering from Egypt with cutting-edge European AI research.</p>
+        <p>My master's thesis, hosted at <strong>ICube-SERTIT (University of Strasbourg)</strong> and jointly supervised by <strong>University of South Brittany</strong> and <strong>University of Salzburg</strong>, built generalizable wildfire delineation for rapid mapping across a <strong>heterogeneous ten-product, eight-sensor VHR archive</strong> — 100 scenes from 53 Copernicus EMS, International Charter and FireWatch activations, at 0.3–6&nbsp;m resolution.</p>
+        <p>It moved from a single-sensor multi-task CNN to <strong>frozen geospatial foundation models</strong> — Panopticon, DINOv3 and DOFA — adapted with a sensor- and resolution-routed <strong>mixture of LoRA adapters</strong>, training 3.5&nbsp;% of the model. The deployed system runs as an ONNX container on a single GPU.</p>
+        <p>Before that I worked on <strong>TomoSAR deep learning</strong> for forest canopy height, rice paddy detection in Thailand from Sentinel-2, and contributed to the <strong>VirtuGhan QGIS plugin</strong>. My background combines space navigation engineering from Egypt with European Earth Observation research.</p>
       </div>
       <div>
         <p style="font-size:0.75rem; font-family:'Space Mono',monospace; color:var(--signal-cyan); letter-spacing:0.12em; text-transform:uppercase; opacity:0.85; margin-bottom:1rem;">Technical Stack</p>
         <div class="skill-cloud">
-          <span class="skill-tag cyan">PyTorch Lightning</span>
-          <span class="skill-tag cyan">TorchGeo</span>
+          <span class="skill-tag cyan">Geospatial Foundation Models</span>
+          <span class="skill-tag cyan">Panopticon / DINOv3 / DOFA</span>
+          <span class="skill-tag cyan">LoRA &amp; PEFT</span>
+          <span class="skill-tag cyan">Mixture-of-Experts Routing</span>
+          <span class="skill-tag cyan">Vision Transformers</span>
           <span class="skill-tag cyan">Semantic Segmentation</span>
-          <span class="skill-tag cyan">UNet / ResNet</span>
+          <span class="skill-tag cyan">UNet / UPerNet</span>
+          <span class="skill-tag cyan">Domain Adaptation</span>
           <span class="skill-tag green">Python</span>
+          <span class="skill-tag green">PyTorch Lightning</span>
+          <span class="skill-tag green">TorchGeo / TerraTorch</span>
           <span class="skill-tag green">TensorFlow / Keras</span>
-          <span class="skill-tag green">Apache Spark</span>
-          <span class="skill-tag green">AWS EMR</span>
-          <span class="skill-tag green">Petastorm</span>
+          <span class="skill-tag green">ONNX Runtime</span>
+          <span class="skill-tag green">Docker</span>
+          <span class="skill-tag green">SLURM / HPC</span>
+          <span class="skill-tag green">Apache Spark / AWS EMR</span>
+          <span class="skill-tag amber">SPOT-6/7 · Pl&eacute;iades · WorldView</span>
+          <span class="skill-tag amber">PlanetScope · GeoEye-1</span>
           <span class="skill-tag amber">Sentinel-1 / Sentinel-2</span>
-          <span class="skill-tag amber">SPOT VHR</span>
-          <span class="skill-tag amber">TomoSAR</span>
+          <span class="skill-tag amber">TomoSAR / InSAR</span>
           <span class="skill-tag amber">Google Earth Engine</span>
-          <span class="skill-tag amber">QGIS / GIS</span>
-          <span class="skill-tag cyan">YOLO</span>
+          <span class="skill-tag amber">QGIS / PostGIS</span>
         </div>
       </div>
     </div>
@@ -1008,17 +1108,18 @@
 
       <div class="timeline-item timeline-current reveal">
         <div class="tl-meta">
-          <span class="tl-date">Mar 2026 — Present</span>
-          <span class="tl-badge badge-current">● Current</span>
+          <span class="tl-date">Mar — Aug 2026</span>
+          <span class="tl-badge badge-current">● Submitted</span>
           <span class="tl-badge badge-internship">Master Thesis</span>
         </div>
-        <div class="tl-role">Deep Learning & Remote Sensing Intern (Master Thesis)</div>
-        <div class="tl-org">iCube-SERTIT, Strasbourg University & IRISA/OBELIX, UBS Vannes — France</div>
+        <div class="tl-role">Deep Learning &amp; Earth Observation Researcher (Master Thesis)</div>
+        <div class="tl-org">ICube-SERTIT, University of Strasbourg — with University of South Brittany &amp; University of Salzburg</div>
         <ul class="tl-bullets">
-          <li>Researching and developing operational deep learning pipelines for <strong>burnt area detection</strong> from Very High-Resolution SPOT satellite imagery for the Copernicus Emergency Management Service (CEMS).</li>
-          <li>Implementing a <strong>multi-task semantic segmentation framework</strong> using a pre-trained UNet-ResNet34 model with Test-Time Augmentation and Mixed Precision training via PyTorch Lightning.</li>
-          <li>Packaging the finalized model into a standalone <strong>Docker-distributed Python application</strong> for rapid deployment by mapping operators.</li>
-          <li>Exploring <strong>multi-sensor fusion</strong> by researching encoders for common spectral domain representations across different sensor types.</li>
+          <li>Built an operational <strong>wildfire burned-area delineation</strong> system for rapid mapping across a heterogeneous VHR archive of <strong>100 scenes from 53 activations</strong> (Copernicus EMS, International Charter, FireWatch), spanning <strong>ten commercial product labels across eight sensor families</strong> at 0.3–6&nbsp;m GSD.</li>
+          <li>Adapted <strong>frozen geospatial foundation models</strong> (Panopticon, DINOv3, DOFA) with a <strong>sensor- and resolution-routed mixture of LoRA adapters</strong> over a UPerNet decoder — 3.55&nbsp;M trainable parameters, 3.5&nbsp;% of the model. Routing the adapters on acquisition metadata was worth three times an unrouted adapter of comparable size.</li>
+          <li>Derived a <strong>metadata-free, per-band, per-scene radiometric self-calibration</strong> that beats per-sensor harmonization by 0.107 scene macro-F1 — necessary because vendor calibration metadata is not redistributed and the archive mixes four processing conventions.</li>
+          <li>Ran an <strong>eleven-arm controlled comparison</strong> isolating the near-infrared injection mechanism, establishing that spectral pretraining matters more than spectral access, and <strong>seven leave-one-region-out folds</strong> showing generalization is bounded by domain similarity rather than bands or data volume.</li>
+          <li>Shipped the model as an <strong>ONNX container</strong> with input-validity guards, running at ~10.5 tiles/s on a single workstation GPU with bit-level parity against the training checkpoint.</li>
         </ul>
       </div>
 
@@ -1091,11 +1192,11 @@
       <div class="track-header">
         <span class="track-icon">🔥</span>
         <span class="track-title">Master Thesis</span>
-        <span class="track-pill pill-green">● In Progress · 2026</span>
-        <span class="track-sub">iCube-SERTIT × IRISA/OBELIX — Strasbourg & Vannes</span>
+        <span class="track-pill pill-green">● Submitted · Aug 2026</span>
+        <span class="track-sub">ICube-SERTIT · UBS Vannes · PLUS Salzburg</span>
       </div>
       <div class="projects-grid">
-        <div class="project-card featured reveal" style="grid-column:1/-1; flex-direction:row;">
+        <div class="project-card featured reveal">
           <div class="featured-visual">
             <svg viewBox="0 0 200 200" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -1120,14 +1221,63 @@
             </svg>
           </div>
           <div style="flex:1; padding:2rem;">
-            <span class="featured-label">● Current Master Thesis</span>
-            <div class="project-name" style="font-size:1.2rem; margin-bottom:0.5rem;">Burnt Area Detection for CEMS</div>
-            <div class="tl-org" style="margin-bottom:1rem;">iCube-SERTIT × IRISA/OBELIX — Strasbourg & Vannes</div>
-            <p class="project-desc" style="max-width:500px;">Multi-task semantic segmentation pipeline for operational wildfire mapping from VHR SPOT imagery, integrated with the Copernicus Emergency Management Service. Uses UNet-ResNet34 with TTA, Mixed Precision, and Docker packaging for rapid deployment by mapping operators.</p>
+            <span class="featured-label">● Master Thesis · Submitted Aug 2026</span>
+            <div class="project-name" style="font-size:1.3rem; margin-bottom:0.5rem;">From Single-Sensor Pipelines to Spectrally-Pretrained Foundation Models</div>
+            <div class="tl-org" style="margin-bottom:1rem;">Generalizable wildfire delineation from Very High-Resolution imagery for rapid mapping<br>ICube-SERTIT (Univ. Strasbourg) · Univ. South Brittany · Univ. Salzburg</div>
+
+            <p class="project-desc">Civil Protection needs burned-area maps within hours of a wildfire. Automating that is hard not because any one scene is difficult, but because the operational archive is heterogeneous: <strong>ten commercial product labels across eight sensor families</strong>, 0.3–6&nbsp;m ground sampling distance, and at least four radiometric processing conventions with no vendor metadata to tell them apart.</p>
+
+            <p class="project-desc">The work adapts <strong>frozen geospatial foundation models</strong> with a sensor- and resolution-routed <strong>mixture of low-rank adapters</strong>, training 3.5&nbsp;% of the model, and reports its negative results as carefully as its wins.</p>
+
+            <div class="thesis-metrics">
+              <div class="tmetric"><span class="tm-num">0.81</span><span class="tm-label">Scene macro-F1<br>19 held-out scenes</span></div>
+              <div class="tmetric"><span class="tm-num">100</span><span class="tm-label">VHR scenes<br>53 activations</span></div>
+              <div class="tmetric"><span class="tm-num">3.5%</span><span class="tm-label">Parameters<br>trained</span></div>
+              <div class="tmetric"><span class="tm-num">7</span><span class="tm-label">Leave-one-region<br>-out folds</span></div>
+            </div>
+
+            <p class="thesis-sub">Sensors &amp; foundation models</p>
+            <div class="project-tags" style="margin-bottom:1rem;">
+              <span class="ptag sensor">SPOT-6</span><span class="ptag sensor">SPOT-7</span><span class="ptag sensor">Pl&eacute;iades</span><span class="ptag sensor">WorldView</span><span class="ptag sensor">WorldView-2</span><span class="ptag sensor">WorldView-3</span><span class="ptag sensor">WorldView-Legion</span><span class="ptag sensor">GeoEye-1</span><span class="ptag sensor">GeoSat-2</span><span class="ptag sensor">PlanetScope</span>
+            </div>
             <div class="project-tags">
-              <span class="ptag">PyTorch Lightning</span><span class="ptag">UNet-RN34</span><span class="ptag">SPOT VHR</span><span class="ptag">Semantic Segmentation</span><span class="ptag">Docker</span><span class="ptag">CEMS</span>
+              <span class="ptag model">Panopticon</span><span class="ptag model">DINOv3</span><span class="ptag model">DOFA</span><span class="ptag">LoRA / PEFT</span><span class="ptag">UPerNet</span><span class="ptag">PyTorch Lightning</span><span class="ptag">ONNX</span><span class="ptag">CEMS · FireWatch</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      <p class="thesis-sub" style="margin-top:2rem;">Selected findings</p>
+      <div class="findings-grid reveal">
+        <div class="finding">
+          <span class="finding-n">Finding 01</span>
+          <div class="finding-t">Preprocessing rivalled architecture</div>
+          <p>Dividing each band by its own per-scene 99th percentile beat per-sensor harmonization by <strong>0.107 scene macro-F1</strong> — needing no vendor metadata, and larger than the entire spread between spectral routes.</p>
+        </div>
+        <div class="finding">
+          <span class="finding-n">Finding 02</span>
+          <div class="finding-t">Pretraining beats access</div>
+          <p>An eleven-arm comparison held the near-infrared injection mechanism as the only variable. Spectral <em>pretraining</em> mattered more than spectral <em>access</em> — and the most theoretically principled injection route performed worst.</p>
+        </div>
+        <div class="finding">
+          <span class="finding-n">Finding 03</span>
+          <div class="finding-t">Where sensor conditioning belongs</div>
+          <p>Routing the low-rank adapters on acquisition metadata was worth <strong>three times</strong> an unrouted adapter of comparable size. Moving the same conditioning one layer earlier, into the frozen tokenizer, cost accuracy instead.</p>
+        </div>
+        <div class="finding negative">
+          <span class="finding-n">Negative result</span>
+          <div class="finding-t">Unsupervised adaptation did not transfer</div>
+          <p>Five adaptation strategies failed at VHR. Adversarial alignment was the clearest case: burn IoU <strong>0.012</strong> on the target region against <strong>0.804</strong> on its own source domain. It trained; it did not transfer. Labeled coverage recovered usable maps instead.</p>
+        </div>
+        <div class="finding negative">
+          <span class="finding-n">Methodological</span>
+          <div class="finding-t">Aggregation can flip the ranking</div>
+          <p>The common practice of dropping totally failed scenes from scene-level averages rewards a model for failing badly enough that its worst result stops counting — and reverses which method appears best.</p>
+        </div>
+        <div class="finding">
+          <span class="finding-n">Finding 04</span>
+          <div class="finding-t">Generalization is bounded by similarity</div>
+          <p>Across seven leave-one-region-out folds, transfer held across the Mediterranean (0.73–0.85) and collapsed outside it — bounded by ecological and radiometric similarity, not by spectral bands, model capacity, or data volume.</p>
         </div>
       </div>
     </div>
@@ -1398,10 +1548,10 @@
     <div class="edu-grid">
 
       <div class="edu-card reveal" style="border-color:rgba(0,255,157,0.2);">
-        <span class="edu-year">2024 — Present</span>
+        <span class="edu-year">2024 — 2026</span>
         <div class="edu-degree">Erasmus Mundus MSc — Copernicus Master in Digital Earth</div>
-        <div class="edu-inst">Paris-Lodron University Salzburg (Austria) & University of South Brittany (France)</div>
-        <div class="edu-detail">Remote Sensing & Geo Data Science. Courses: Computer Vision, Machine Learning, Big Data for EO, Efficient RS Image Processing. Erasmus Mundus Scholar (EMJM).</div>
+        <div class="edu-inst">University of Salzburg (Austria) &amp; University of South Brittany (France)</div>
+        <div class="edu-detail">Geoinformatics &amp; Geo Data Science specialisation. Thesis: <em>From Single-Sensor Pipelines to Spectrally-Pretrained Foundation Models — Generalizable Wildfire Delineation Using VHR Satellite Imagery for Rapid Mapping</em>, hosted at ICube-SERTIT, University of Strasbourg. Erasmus Mundus Scholar (EMJM).</div>
       </div>
 
       <div class="edu-card reveal">
@@ -1448,7 +1598,7 @@
 <section id="contact">
   <div class="contact-inner reveal">
     <h2 class="section-title">Let's Connect</h2>
-    <p class="contact-sub">Open to research collaborations, internship opportunities, and conversations about Earth Observation, AI, and the future of satellite-powered insights.</p>
+    <p class="contact-sub">Recently graduated and open to roles in Earth Observation and machine learning — research positions, PhD opportunities, and applied work on operational geospatial systems. Always happy to talk about foundation models for EO.</p>
     <div class="contact-links">
       <a href="mailto:sahaar208@gmail.com" class="contact-link">✉ Email</a>
       <a href="https://www.linkedin.com/in/sahar-mohamed-644aa9182/" target="_blank" class="contact-link">in LinkedIn</a>
